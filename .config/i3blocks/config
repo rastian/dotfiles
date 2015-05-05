@@ -28,6 +28,12 @@ command=$SCRIPT_DIR/$BLOCK_NAME
 separator_block_width=25
 markup=none
 
+# Uptime indicator
+[uptime]
+label=↑
+command=uptime | grep -oP 'up  \K\d+:\d+'
+interval=60
+color=#f75252
 
 # Dropbox indicator
 [dropbox]
@@ -126,7 +132,7 @@ color=#ffa7da
 # Date Time
 #
 [time]
-command=date '+%A %d %B %Y  %I:%M'
+command=date '+%a %d %B %Y  %I:%M'
 interval=5
 color=#75daa9
 
