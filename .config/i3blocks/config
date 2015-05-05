@@ -28,6 +28,13 @@ command=$SCRIPT_DIR/$BLOCK_NAME
 separator_block_width=25
 markup=none
 
+# WiFi
+[wifi]
+label=@
+command=iwconfig wlan0 | grep -oP 'ESSID:"\K\w+'
+interval=60
+#color
+
 # Uptime indicator
 [uptime]
 label=↑
