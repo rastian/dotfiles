@@ -177,6 +177,7 @@ bar {
 				status_command i3blocks
 				position top
 				font pango: Roboto 9
+				tray_output none
 		    colors {
         			 background          $bg
         			 statusline          $fg
