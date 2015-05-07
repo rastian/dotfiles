@@ -33,7 +33,7 @@ markup=none
 label=@
 command=iwconfig wlan0 | grep -oP 'ESSID:"\K\w+'
 interval=60
-#color
+color=#ffa7da
 
 # Uptime indicator
 [uptime]
@@ -119,22 +119,13 @@ min_width=CPU: 100.00%
 #interval=10
 
 # Battery indicator
-#
-# The battery instance defaults to 0.
-# [battery]
-# label=BAT
-# label=⚡
-# command=
-# instance=1
-# interval=30
 [battery]
 label=BAT
 label=⚡
-#command=/home/rastian/bin/battery
-#command=acpi | grep -o "..[0-9]%"
 command=acpi | grep -o "[0-9]*%"
 interval=30
-color=#ffa7da
+color=#d6f046
+
 
 # Date Time
 #

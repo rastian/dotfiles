@@ -200,6 +200,6 @@ bar {
 
 # MY OWN STUFF
 exec --no-startup-id setxkbmap -option ctrl:nocaps
-exec --no-startup-id i3-msg 'workspace $ws1; exec firefox'
+exec --no-startup-id i3-msg 'workspace $ws1; exec firefox' 
 exec --no-startup-id ~/.dropbox-dist/dropboxd
 exec --no-startup-id sudo bash -c "echo 100000 > /proc/sys/fs/inotify/max_user_watches"
