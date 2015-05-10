@@ -4,7 +4,6 @@
 # Should you change your keyboard layout somewhen, delete
 # this file and re-run i3-config-wizard(1).
 #
-
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -183,12 +182,32 @@ bar {
 				font pango: Roboto 9
 				tray_output none
 				strip_workspace_numbers yes
+
+				colors {
+				# Status Line
+				background $grey
+				separator $dull_white
+				statusline $white
+				# Status Bar 
+				focused_workspace $green $green $base
+				active_workspace $yellow $yellow $base
+				inactive_workspace $grey $grey $dull_white
+				urgent_workspace $red $red $white
+
+				# focused $blue $blue $base $green
+				# focused_inactive $green $green $base $purple
+				# unfocused $grey $grey $dull_white $purple
+				# urgent $red $red $white $yellow
+}
 }
 
-client.focused #4F99D3 #4F99D3 #151718 #9FCA56
-client.focused_inactive #9FCA56 #9FCA56 #151718 #A074C4
-client.unfocused #1f2326 #1f2326 #AAAAAA #A074C4
-client.urgent #CE4045 #CE4045 #FFFFFF #DCCD69
+client.focused $blue $blue $base $green
+client.focused_inactive $green $green $base $purple
+client.unfocused $grey $grey $dull_white $purple
+client.urgent $red $red $white $yellow
+
+
+
 
 # MY OWN STUFF
 exec --no-startup-id setxkbmap -option ctrl:nocaps
