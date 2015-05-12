@@ -12,15 +12,15 @@
 set $mod Mod4
 
 # Colors
-set $blue				#4F99D3
+set $blue			#4F99D3
 set $green			#9FCA56
 set $yellow			#DCCD69
-set $red				#CE4045
+set $red			#CE4045
 set $orange			#FF8315
 set $purple			#A074C4
-set $grey				#1f2326
+set $grey			#1f2326
 set $white			#FFFFFF
-set $dull_white #AAAAAA
+set $dull_white 		#AAAAAA
 set $base 			#151718
 
 
@@ -194,14 +194,13 @@ bar {
 new_window pixel
 hide_edge_borders both
 
-# 								      BORDER BACKGROUND TEXT        INDICATOR
+#                       BORDER BACKGROUND TEXT        INDICATOR
 client.focused          $blue  $blue      $base       $green
 client.focused_inactive $green $green     $base       $purple
 client.unfocused        $grey  $grey      $dull_white $purple
 client.urgent           $red   $red       $white      $yellow
 
-
-# MY OWN STUFF
+# Applications 
 exec --no-startup-id compton -cCGb --backend glx --vsync opengl
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id ~/.dropbox-dist/dropboxd
