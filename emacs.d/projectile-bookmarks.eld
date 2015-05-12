@@ -1,0 +1,1 @@
+("~/Dropbox/School/Spring-15/" "~/git/dotfiles/" "~/.i3blocks/" "~/git/wikipedia-cli/" "~/Dropbox/Projects/" "~/git/reddit-daily-programmer/" "~/Dropbox/LearnC/" "~/Dropbox/PE")

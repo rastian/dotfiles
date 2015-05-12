@@ -1,0 +1,184 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/" . "rastian/")
+ ("/home/rastian/Dropbox/Projects/" . "steam-sale/")
+ ("/home/rastian/Dropbox/School/Spring-15/" . "HST201/")
+ ("/home/rastian/.emacs.d/elpa/yasnippet-20141223.303/snippets/" . "org-mode/")
+ ("/home/rastian/.emacs.d/elpa/yasnippet-20141223.303/" . "snippets/")
+ ("/home/rastian/.emacs.d/elpa/" . "yasnippet-20141223.303/")
+ ("/home/rastian/.emacs.d/" . "elpa/")
+ ("/home/rastian/Dropbox/School/" . "Spring-15/")
+ ("/home/rastian/Dropbox/" . "School/")
+ ("/home/rastian/" . "Dropbox/")
+ ("c:/Python34/Lib/" . "site-packages/")
+ ("c:/Python34/" . "Lib/")
+ ("c:/Users/Christian/Dropbox/.emacs.d/elpa/yasnippet-20141223.303/snippets/" . "text-mode/")
+ ("c:/Users/Christian/Dropbox/.emacs.d/elpa/yasnippet-20141223.303/" . "snippets/")
+ ("c:/Users/Christian/Dropbox/.emacs.d/elpa/" . "yasnippet-20141223.303/")
+ ("c:/Users/Christian/Dropbox/.emacs.d/" . "elpa/")
+ ("c:/Users/Christian/Dropbox/Projects/" . "steam-sale/")
+ ("c:/" . "Python34/")
+ ("c:/Users/" . "Christian/")
+ ("c:/Users/Christian/.emacs.d/elpa/yasnippet-20141223.303/snippets/" . "org-mode/")
+ ("c:/Users/Christian/.emacs.d/elpa/yasnippet-20141223.303/" . "snippets/")
+ ("c:/Users/Christian/.emacs.d/elpa/" . "yasnippet-20141223.303/")
+ ("c:/Users/Christian/.emacs.d/" . "elpa/")
+ ("c:/Users/Christian/Dropbox/" . "Projects/")
+ ("c:/Users/Christian/" . "Dropbox/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/rastian/.emacs.d/"
+ "/home/rastian/Dropbox/School/Spring-15/HST201/"
+ "/home/rastian/"
+ "/home/rastian/sandbox/"
+ "/home/rastian/Dropbox/Projects/steam-sale/"
+ "/home/rastian/Dropbox/School/Spring-15/CS202/"
+ "/home/rastian/Desktop/"
+ "/home/rastian/Dropbox/School/Spring-15/"
+ "/home/rastian/Dropbox/School/Spring-15/PHL110/"
+ "/home/rastian/Dropbox/School/Spring-15/ENG120/"
+ "/home/rastian/Dropbox/org/"
+ "/home/rastian/.emacs.d/elpa/yasnippet-20141223.303/snippets/org-mode/"
+ "/home/rastian/Documents/"
+ "c:/Users/Christian/.emacs.d/"
+ "c:/Users/Christian/Desktop/"
+ "c:/Users/Christian/sandbox/"
+ "c:/Users/Christian/Dropbox/Projects/steam-sale/"
+ "c:/Users/Christian/Dropbox/org/"
+ "c:/Users/Christian/.emacs.d/elpa/yasnippet-20141223.303/snippets/org-mode/"
+ "c:/Python34/Lib/"
+ "c:/Users/Christian/Dropbox/.emacs.d/elpa/yasnippet-20141223.303/snippets/text-mode/"
+ "c:/Users/Christian/.emacs.d/elpa/yasnippet-20141223.303/snippets/text-mode/"
+ "c:/Users/Christian/Dropbox/"
+ "c:/Users/Christian/Dropbox/School/Spring-15/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "christian.org"
+ "hst201.org"
+ ".bash_aliases"
+ "uml.txt"
+ "main.py"
+ "christian.el"
+ "init.el"
+ "cs202.tex"
+ "cs202.org"
+ "justin.py"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/rastian/.emacs.d/" (21713 30864 357104 975000) "elpa/" "ac-comphist.dat" "../" "ido.last" "session.2e6b81765-4037-457f-8cdf-924728b8d7de" "smex-items" "session.2422793f5-81a0-4d56-9771-647a121697e4" "init.el" "christian.el" "auto-save-list/" "speed-type/" "christian.org" "./")
+
+ ("/home/rastian/Dropbox/School/Spring-15/HST201/" (21713 22546 895987 103000) "../" "hst201.org" "./")
+
+ ("/home/rastian/Dropbox/School/Spring-15/" (21713 22545 63071 175000) "MTH232/" "PHL110/" "../" "ENG120/" "HST201/" "CS202/" "Syllabi/" "./" "homework.org")
+
+ ("/home/rastian/Dropbox/" (21713 22533 357221 631000) "RDP/" "CS201/" "Programs/" "emacs.d/" "../" "Projects/" "Pictures/" "PokeMMO/" "bashrc" "lpthw/" "txt.txt" "org/" "rp.txt" "Wallpapers/" ".dropbox.cache/" "School/" ".dropbox" "./")
+
+ ("/home/rastian/" (21713 22499 300202 958000) ".steam/" ".audacity-data/" ".gstreamer-0.10/" ".vim/" "Steam/" ".linuxmint/" ".dropbox-dist/" ".PlayOnLinux/" ".profile" ".mozilla/" ".rpmdb/" ".minecraft/" ".compiz/" ".viminfo" ".java/" "Downloads/" ".Skype/" ".Minecraft.jar" ".Xauthority" "Music/" "../" ".gnome2/" ".gksu.lock" ".gnome2_private/" "Templates/" ".PokeMMO/" "Desktop/" ".xscreensaver" "Pictures/" ".zshrc" ".gtkrc-xfce" ".swt/" ".minecraft_server/" ".gconf/" "Public/" ".gervill/" ".python_history" ".bash_history" ".themes/" ".steampath" ".emacs.d/" ".gtkrc-2.0" ".pulse-cookie" "SavedGames/" ".ICEauthority" "Videos/" ".macromedia/" ".pip/" ".thunderbird/" "Dropbox/" ".cache/" ".eclipse/" ".nv/" ".thumbnails/" ".steampid" ".swo" ".adobe/" ".synaptic/" "sandbox/" "Documents/" ".bash_aliases" ".gnupg/" ".swn" ".pki/" ".dbus/" ".dmrc" "test/" ".zcompdump" ".config/" ".xsession-errors" ".bashrc" ".bash_logout" ".swp" ".dropbox/" ".local/" "./")
+
+ ("/home/rastian/sandbox/" (21710 58361 597219 275000) "Hello.class" "Hello.java" "../" "justin.py" "test.html" "#justin.py#" "news.py" "./")
+
+ ("/home/" (21686 54404 795993 6000) "lost+found/" "rastian/" "../" "./")
+
+ ("/home/rastian/Dropbox/Projects/steam-sale/" (21711 24178 359840 149000) "main.py" "update-game-list.py" "gui.py" "../" "dictionary.txt" "__pycache__/" "./")
+
+ ("/home/rastian/Dropbox/Projects/" (21697 38931 805214 90000) "RDP/" "../" "steam-sale/" "./")
+
+ ("/home/rastian/Dropbox/School/Spring-15/CS202/" (21710 55911 477288 954000) "../" "cs202.html" "cs202.tex~" "cs202.org" "cs202.tex" "./")
+
+ ("/home/rastian/Dropbox/School/" (21707 35232 0 0) "Fall-14/" "../" "Spring-15/" "./")
+
+ ("/home/rastian/Desktop/" (21704 25253 901341 109000) ".test.txt.swp" "../" "eventually.txt" "Steam.desktop" "./")
+
+ ("/home/rastian/Dropbox/org/" (21699 52429 844019 998000) "init.org" "../" "emacs.org" "media.org" "personal.org" "christian.org" "RDP.org" "./")
+
+ ("/home/rastian/Dropbox/School/Spring-15/ENG120/" (21698 45985 909710 868000) "../" "eng120.org" "./")
+
+ ("/home/rastian/Dropbox/School/Spring-15/PHL110/" (21698 45985 917714 866000) "../" "phl110.org" "./")
+
+ ("/home/rastian/.emacs.d/elpa/yasnippet-20141223.303/snippets/org-mode/" (21694 50789 894280 807000) "entry" "code" "../" "matrix" "latex" "embedded" "srcname" "blog" "dot" "figure" "img" "src" "verse" "link" "elisp" "./")
+
+ ("/home/rastian/.emacs.d/elpa/yasnippet-20141223.303/snippets/" (21692 11938 869843 531000) "prog-mode/" "markdown-mode/" "latex-mode/" "ensime-mode" "css-mode/" "csharp-mode/" "tuareg-mode/" "octave-mode/" "chef-mode/" "cperl-mode/" "perl-mode/" ".nosearch" "LICENSE" "rst-mode/" "groovy-mode/" "../" "m4-mode/" "html-mode/" "erlang-mode/" "rename_add_contr.py" "org-mode/" "nxml-mode/" "makefile-bsdmake-mode/" "fundamental-mode/" "emacs-lisp-mode/" "cmake-mode/" "makefile-mode/" "erc-mode/" "applescript-mode/" "makefile-gmake-mode/" "makefile-automake-mode/" "snippet-mode/" "js2-mode/" "README.md" "js-mode/" "nsis-mode/" "java-mode/" "c++-mode/" "scala-mode/" "cpp-omnet-mode/" "sh-mode/" "lisp-interaction-mode/" "haskell-mode/" "enh-ruby-mode" "nesc-mode/" "lua-mode/" "udev-mode/" "f90-mode/" "typerex-mode" "git-commit-mode/" "python-mode/" "conf-unix-mode/" "sql-mode/" "yaml-mode/" "text-mode/" "ruby-mode/" "antlr-mode/" "go-mode/" "c-mode/" "ned-mode/" "cc-mode/" "CONTRIBUTORS.txt" "./")
+
+ ("/home/rastian/.emacs.d/elpa/yasnippet-20141223.303/" (21692 11938 885843 531000) "yasnippet-pkg.el" "snippets/" "yasnippet-autoloads.el~" "yasnippet.el" "../" "yasnippet.elc" "yasnippet-autoloads.el" "./")
+
+ ("/home/rastian/.emacs.d/elpa/" (21694 14702 20309 96000) "idomenu-20141123.1320/" "company-20150115.1751/" "iy-go-to-char-20141029.1549/" "solarized-theme-20150111.1031/" "ido-vertical-mode-20150102.654/" "autopair-20140825.427/" "popup-20141215.349/" "use-package-20150103.2223/" "smart-mode-line-20150106.1401/" "dash-20141220.1452/" "yasnippet-20141223.303/" "git-rebase-mode-20140928.1547/" "archives/" "../" "pyvenv-20150110.421/" "writeroom-mode-20150115.2313/" "s-20140910.334/" "csv-mode-1.2/" "speed-type-20150119.2243/" "smex-20141210.1422/" "expand-region-20141223.1328/" "highlight-indentation-20150113.2304/" "writegood-mode-20140605.734/" "git-commit-mode-20141014.1634/" "ace-jump-mode-20140616.115/" "popwin-20141227.2351/" "pretty-mode-readme.txt" "elpy-20141031.945/" "rich-minority-20141225.820/" "ido-ubiquitous-20141118.1234/" "auto-complete-20141228.633/" "diminish-20091203.1012/" "magit-20150116.517/" "key-chord-20140929.2246/" "speed-type-readme.txt" "bind-key-20150102.1532/" "find-file-in-project-20141214.1952/" "guide-key-20150107.2235/" "gnupg/" "visual-fill-column-20150115.1815/" "./")
+
+ ("/home/rastian/Documents/" (21688 24753 657517 243000) "Christian-MV44.pdf" "Avila-LaVerde-MV44.pdf" "attorney.mp3" "../" "LaVerde-MV44.pdf" "Avila-MV44.pdf" "./")
+
+ ("c:/Users/Christian/Desktop/" (21690 1505 0 0) "__pycache__/" "USB Backup/" "tk/" "test.py" "test.org" "ScpMonitor.exe - Shortcut.lnk" "Revo Uninstaller.lnk" "regetron/" "rdp.py" "putty.exe" "PokeMMO/" "PBE/" "org.py" "New folder/" "mv44.pdf" "init.el" "GitHub.appref-ms" "Git Shell.lnk" "Fallout New Vegas.lnk" "Fallout Mod Manager.lnk" "eventually.txt" "desktop.ini" "BC-2B.pdf" "BC-2A.pdf" "BC-2.pdf" "1-9-15 BC-7B.pdf" ".emacs.d/" ".#test.org" "../" "./")
+
+ ("c:/Users/Christian/sandbox/" (21690 750 0 0) "__pycache__/" "thread_port.py" "test.py" "test.org" "sock_test.py" "portscan.py" "news.py" "class_test2.py" "class_test.py" "../" "./")
+
+ ("c:/Users/Christian/Dropbox/" (21689 44982 0 0) "Wallpapers/" "txt.txt" "School/" "RDP/" "Projects/" "Programs/" "PokeMMO/" "Photos/" "org/" "init.el" "desktop.ini" "CS201/" "cf final_edited.docx" ".emacs.d/" ".dropbox.cache/" ".dropbox" "../" "./")
+
+ ("c:/Users/Christian/Dropbox/Projects/steam-sale/" (21689 43878 0 0) "__pycache__/" "update-game-list.py" "main.py" "gui.py" "dictionary.txt" "../" "./")
+
+ ("c:/Users/Christian/.emacs.d/" (21689 36001 0 0) "smex-items" "init.el" "ido.last" "elpa/" "auto-save-list/" "ac-comphist.dat" "../" "./")
+
+ ("c:/Users/Christian/Dropbox/.emacs.d/elpa/yasnippet-20141223.303/snippets/text-mode/" (21686 49036 0 0) "without" "with" "before" "because" ".yas-parents" "../" "./")
+
+ ("c:/Users/Christian/.emacs.d/elpa/yasnippet-20141223.303/snippets/org-mode/" (21685 13031 0 0) "verse" "srcname" "src" "matrix" "link" "latex" "img" "figure" "entry" "embedded" "elisp" "dot" "code" "blog" "../" "./")
+
+ ("c:/Users/Christian/Dropbox/org/" (21689 22623 0 0) "RDP.org" "personal.org" "media.org" "emacs.org" "christian.org" "christian.el" "#christian.el#" "../" "./")
+
+ ("c:/Users/Christian/Dropbox/CS201/" (21666 32728 0 0) "sierpinski.py" "Lab8-F14.zip" "Lab4-F14.zip" "Lab11-F14-Dictionaries.zip" "Lab10-F14.zip" "CS201-F14 Programming Assignment-1.docx" "CS 201 Test2 lab part.docx" "CS 201 Lab3-F14.zip" "CS 201 Lab 2 - IntroPython F14.docx" "CS 201 F14 week 01 Intro.pptx" "CS 201 F14 SimpleFunctions.pptx" "CS 201 F14 Search and Sort(1).pptx" "CS 201 F14 Programming Assignment-3(1).docx" "CS 201 F14 Programming Assignment-2.docx" "CS 201 F14 practice 3.docx" "CS 201 F14 practice 2.docx" "CS 201 F14 practice 1.docx" "CS 201 F14 Loops II.pptx" "CS 201 F14 Loops 1(1).pptx" "CS 201 F14 Lists.pptx" "CS 201 F14 Lab7 Random Numbers.zip" "CS 201 F14 Lab6-Simple Functions.zip" "CS 201 F14 Lab5 loops 2.zip" "CS 201 F14 Lab12 search sort(1).docx" "CS 201 F14 Lab work.docx" "CS 201 F14 Lab 9 Lists.zip" "CS 201 F14 Lab 1 binary numbers.docx" "CS 201 F14 Functions.pptx" "CS 201 F14 Files.pptx" "CS 201 F14 Dictionaries.pptx" "CS 201 F14 data representation.pptx" "CS 201 F14 Algorithms.pptx" "CS 201 F14  Strings.pptx" "CS 201 F14  Recursion.pptx" "CS 201 F14  IO.pptx" "CS 201 F14  Conditionals.pptx" "branch.py" "../" "./")
+
+ ("c:/Users/Christian/" (21685 20581 0 0) "_viminfo" "Videos/" "Templates/" "Start Menu/" "SendTo/" "Searches/" "Saved Games/" "sandbox/" "Roaming/" "Recent/" "Projects/" "Programs/" "PrintHood/" "pip/" "Pictures/" "OneDrive/" "ntuser.ini" "NTUSER.DAT{bbed3e3b-0b41-11e3-8249-d6927d06400b}.TMContainer00000000000000000002.regtrans-ms" "NTUSER.DAT{bbed3e3b-0b41-11e3-8249-d6927d06400b}.TMContainer00000000000000000001.regtrans-ms" "NTUSER.DAT{bbed3e3b-0b41-11e3-8249-d6927d06400b}.TM.blf" "ntuser.dat.LOG2" "ntuser.dat.LOG1" "NTUSER.DAT" "NetHood/" "My Documents/" "Music/" "Local Settings/" "Links/" "IntelGraphicsProfiles/" "Favorites/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "Cookies/" "Contacts/" "Application Data/" "AppData/" "agent.log" ".ssh/" ".idlerc/" ".gitconfig" ".emacs.d/" ".android/" "../" "./")
+
+ ("c:/Python34/Lib/" (21684 42668 0 0) "__pycache__/" "__phello__.foo.py" "__future__.py" "_weakrefset.py" "_threading_local.py" "_strptime.py" "_sitebuiltins.py" "_pyio.py" "_osx_support.py" "_markupbase.py" "_dummy_thread.py" "_compat_pickle.py" "_collections_abc.py" "_bootlocale.py" "zipfile.py" "xmlrpc/" "xml/" "xdrlib.py" "wsgiref/" "webbrowser.py" "weakref.py" "wave.py" "warnings.py" "venv/" "uuid.py" "uu.py" "urllib/" "unittest/" "types.py" "turtledemo/" "turtle.py" "tty.py" "tracemalloc.py" "traceback.py" "trace.py" "tokenize.py" "token.py" "tkinter/" "timeit.py" "threading.py" "this.py" "textwrap.py" "test/" "tempfile.py" "telnetlib.py" "tarfile.py" "tabnanny.py" "sysconfig.py" "symtable.py" "symbol.py" "sunau.py" "subprocess.py" "struct.py" "stringprep.py" "string.py" "statistics.py" "stat.py" "ssl.py" "sre_parse.py" "sre_constants.py" "sre_compile.py" "sqlite3/" "socketserver.py" "socket.py" "sndhdr.py" "smtplib.py" "smtpd.py" "site.py" "site-packages/" "shutil.py" "shlex.py" "shelve.py" "selectors.py" "sched.py" "runpy.py" "rlcompleter.py" "reprlib.py" "re.py" "random.py" "quopri.py" "queue.py" "py_compile.py" "pydoc_data/" "pydoc.py" "pyclbr.py" "pty.py" "pstats.py" "profile.py" "pprint.py" "posixpath.py" "poplib.py" "plistlib.py" "platform.py" "pkgutil.py" "pipes.py" "pickletools.py" "pickle.py" "pdb.py" "pathlib.py" "os.py" "optparse.py" "operator.py" "opcode.py" "numbers.py" "nturl2path.py" "ntpath.py" "nntplib.py" "netrc.py" "multiprocessing/" "msilib/" "modulefinder.py" "mimetypes.py" "mailcap.py" "mailbox.py" "macurl2path.py" "macpath.py" "lzma.py" "logging/" "locale.py" "linecache.py" "lib2to3/" "keyword.py" "json/" "ipaddress.py" "io.py" "inspect.py" "importlib/" "imp.py" "imghdr.py" "imaplib.py" "idlelib/" "http/" "html/" "hmac.py" "heapq.py" "hashlib.py" "gzip.py" "glob.py" "gettext.py" "getpass.py" "getopt.py" "genericpath.py" "functools.py" "ftplib.py" "fractions.py" "formatter.py" "fnmatch.py" "fileinput.py" "filecmp.py" "enum.py" "ensurepip/" "encodings/" "email/" "dummy_threading.py" "doctest.py" "distutils/" "dis.py" "difflib.py" "decimal.py" "dbm/" "datetime.py" "curses/" "ctypes/" "csv.py" "crypt.py" "cProfile.py" "copyreg.py" "copy.py" "contextlib.py" "configparser.py" "concurrent/" "compileall.py" "colorsys.py" "collections/" "codeop.py" "codecs.py" "code.py" "cmd.py" "chunk.py" "cgitb.py" "cgi.py" "calendar.py" "bz2.py" "bisect.py" "binhex.py" "bdb.py" "base64.py" "asyncore.py" "asyncio/" "asynchat.py" "ast.py" "argparse.py" "antigravity.py" "aifc.py" "abc.py" "../" "./")
+
+ ("c:/Users/Christian/.emacs.d/elpa/yasnippet-20141223.303/snippets/text-mode/" (21683 22168 0 0) "without" "with" "before" "because" ".yas-parents" "../" "./")
+
+ ("c:/Python34/Lib/site-packages/" (21673 50572 0 0) "__pycache__/" "_markerlib/" "virtualenv_support/" "virtualenv.pyc" "virtualenv.py" "virtualenv-12.0.4.dist-info/" "update_checker_test.py" "update_checker.py" "update_checker-0.10.dist-info/" "six.py" "six-1.8.0.dist-info/" "setuptools-2.1.dist-info/" "setuptools/" "requests-2.4.3.dist-info/" "requests/" "README.txt" "pyflakes-0.8.1.dist-info/" "pyflakes/" "praw-2.1.19.dist-info/" "praw/" "pkg_resources.py" "pip-1.5.6.dist-info/" "pip/" "pep8.py" "pep8-1.5.7.dist-info/" "mccabe.py" "mccabe-0.3.dist-info/" "jedi-0.8.1_final0-py3.4.egg-info/" "jedi/" "flake8-2.2.5-py3.4.egg-info/" "flake8/" "easy_install.py" "easy-install.pth" "../" "./")
+
+ ("c:/Python34/libs/" (21584 12905 0 0) "_tkinter.lib" "_testimportmultiple.lib" "_testcapi.lib" "_testbuffer.lib" "_ssl.lib" "_sqlite3.lib" "_socket.lib" "_overlapped.lib" "_multiprocessing.lib" "_msi.lib" "_lzma.lib" "_hashlib.lib" "_elementtree.lib" "_decimal.lib" "_ctypes_test.lib" "_ctypes.lib" "_bz2.lib" "winsound.lib" "unicodedata.lib" "select.lib" "python34.lib" "python3.lib" "pyexpat.lib" "libpython34.a" "../" "./")
+
+ ("c:/Python34/" (21584 12918 0 0) "Tools/" "tcl/" "Scripts/" "README.txt" "pythonw.exe" "python.exe" "NEWS.txt" "LICENSE.txt" "libs/" "Lib/" "include/" "Doc/" "DLLs/" "../" "./")
+
+ ("c:/Users/Christian/.emacs.d/elpa/" (21684 12962 0 0) "yasnippet-20141223.303/" "writeroom-mode-20150106.1350/" "writegood-mode-20140605.734/" "use-package-20150103.2223/" "solarized-theme-20141216.1548/" "smex-20141210.1422/" "smart-mode-line-20150106.1401/" "s-20140910.334/" "rich-minority-20141225.820/" "pyvenv-20140921.816/" "popwin-20141227.2351/" "popup-20141215.349/" "magit-20141228.1413/" "key-chord-20140929.2246/" "iy-go-to-char-20141029.1549/" "idomenu-20141123.1320/" "ido-vertical-mode-20150102.654/" "ido-ubiquitous-20141118.1234/" "highlight-indentation-20150106.246/" "guide-key-20150107.2235/" "git-rebase-mode-20140928.1547/" "git-commit-mode-20141014.1634/" "find-file-in-project-20141214.1952/" "expand-region-20141223.1328/" "elpy-20141031.945/" "diminish-20091203.1012/" "dash-20141220.1452/" "csv-mode-1.2/" "company-20150107.949/" "bind-key-20150102.1532/" "autopair-20140825.427/" "auto-complete-20141228.633/" "archives/" "ace-jump-mode-20140616.115/" "../" "./")
+
+ ("c:/Users/Christian/Dropbox/.emacs.d/elpa/yasnippet-20141223.303/snippets/" (21683 21691 0 0) "yaml-mode/" "udev-mode/" "typerex-mode" "tuareg-mode/" "text-mode/" "sql-mode/" "snippet-mode/" "sh-mode/" "scala-mode/" "ruby-mode/" "rst-mode/" "rename_add_contr.py" "README.md" "python-mode/" "prog-mode/" "perl-mode/" "org-mode/" "octave-mode/" "nxml-mode/" "nsis-mode/" "nesc-mode/" "ned-mode/" "markdown-mode/" "makefile-mode/" "makefile-gmake-mode/" "makefile-bsdmake-mode/" "makefile-automake-mode/" "m4-mode/" "lua-mode/" "lisp-interaction-mode/" "LICENSE" "latex-mode/" "js2-mode/" "js-mode/" "java-mode/" "html-mode/" "haskell-mode/" "groovy-mode/" "go-mode/" "git-commit-mode/" "fundamental-mode/" "f90-mode/" "erlang-mode/" "erc-mode/" "ensime-mode" "enh-ruby-mode" "emacs-lisp-mode/" "css-mode/" "csharp-mode/" "cpp-omnet-mode/" "cperl-mode/" "CONTRIBUTORS.txt" "conf-unix-mode/" "cmake-mode/" "chef-mode/" "cc-mode/" "c-mode/" "c++-mode/" "applescript-mode/" "antlr-mode/" ".nosearch" "../" "./")
+
+ ("c:/Users/Christian/Dropbox/.emacs.d/elpa/yasnippet-20141223.303/" (21683 21689 0 0) "yasnippet.elc" "yasnippet.el" "yasnippet-pkg.el" "yasnippet-autoloads.el~" "yasnippet-autoloads.el" "snippets/" "../" "./")
+
+ ("c:/Users/Christian/Dropbox/.emacs.d/elpa/" (21683 21689 0 0) "yasnippet-20141223.303/" "writeroom-mode-20150106.1350/" "writegood-mode-20140605.734/" "use-package-20150103.2223/" "solarized-theme-20141216.1548/" "smex-20141210.1422/" "smart-mode-line-20150106.1401/" "s-20140910.334/" "rich-minority-20141225.820/" "pyvenv-20140921.816/" "popwin-20141227.2351/" "popup-20141215.349/" "magit-20141228.1413/" "key-chord-20140929.2246/" "iy-go-to-char-20141029.1549/" "idomenu-20141123.1320/" "ido-vertical-mode-20150102.654/" "highlight-indentation-20150106.246/" "guide-key-20150107.2235/" "git-rebase-mode-20140928.1547/" "git-commit-mode-20141014.1634/" "find-file-in-project-20141214.1952/" "expand-region-20141223.1328/" "elpy-20141031.945/" "diminish-20091203.1012/" "dash-20141220.1452/" "csv-mode-1.2/" "company-20150107.949/" "bind-key-20150102.1532/" "autopair-20140825.427/" "auto-complete-20141228.633/" "archives/" "ace-jump-mode-20140616.115/" "../" "./")
+
+ ("c:/Users/Christian/Dropbox/.emacs.d/" (21683 21687 0 0) "smex-items" "init.el~" "init.el" "ido.last" "elpa/" "auto-save-list/" "ac-comphist.dat" "../" "./")
+
+ ("c:/Users/Christian/.emacs.d/elpa/yasnippet-20141223.303/snippets/" (21683 21669 0 0) "yaml-mode/" "udev-mode/" "typerex-mode" "tuareg-mode/" "text-mode/" "sql-mode/" "snippet-mode/" "sh-mode/" "scala-mode/" "ruby-mode/" "rst-mode/" "rename_add_contr.py" "README.md" "python-mode/" "prog-mode/" "perl-mode/" "org-mode/" "octave-mode/" "nxml-mode/" "nsis-mode/" "nesc-mode/" "ned-mode/" "markdown-mode/" "makefile-mode/" "makefile-gmake-mode/" "makefile-bsdmake-mode/" "makefile-automake-mode/" "m4-mode/" "lua-mode/" "lisp-interaction-mode/" "LICENSE" "latex-mode/" "js2-mode/" "js-mode/" "java-mode/" "html-mode/" "haskell-mode/" "groovy-mode/" "go-mode/" "git-commit-mode/" "fundamental-mode/" "f90-mode/" "erlang-mode/" "erc-mode/" "ensime-mode" "enh-ruby-mode" "emacs-lisp-mode/" "css-mode/" "csharp-mode/" "cpp-omnet-mode/" "cperl-mode/" "CONTRIBUTORS.txt" "conf-unix-mode/" "cmake-mode/" "chef-mode/" "cc-mode/" "c-mode/" "c++-mode/" "applescript-mode/" "antlr-mode/" ".nosearch" "../" "./")
+
+ ("c:/Users/Christian/.emacs.d/elpa/yasnippet-20141223.303/" (21683 21667 0 0) "yasnippet.elc" "yasnippet.el" "yasnippet-pkg.el" "yasnippet-autoloads.el~" "yasnippet-autoloads.el" "snippets/" "../" "./")
+
+ ("c:/Users/Christian/Dropbox/Projects/" (21670 4115 0 0) "steam-sale/" "../" "./")
+
+ ("c:/Program Files/" (21681 42002 0 0) "WindowsPowerShell/" "WindowsApps/" "Windows Sidebar/" "Windows Portable Devices/" "Windows Photo Viewer/" "Windows NT/" "Windows Multimedia Platform/" "Windows Media Player/" "Windows Mail/" "Windows Journal/" "Windows Defender/" "Virtual Audio Cable/" "Uninstall Information/" "Synaptics/" "Scarlet.Crush Productions/" "Reference Assemblies/" "Recuva/" "Realtek/" "NVIDIA Corporation/" "Nexus Mod Manager/" "MusicBee/" "MSBuild/" "MotioninJoy/" "MiKTeX 2.9/" "Microsoft Xbox 360 Accessories/" "Microsoft Office 15/" "Microsoft Mouse and Keyboard Center/" "mcafee/" "Lenovo/" "Java/" "Internet Explorer/" "Intel Corporation/" "Intel/" "Embedded Lockdown Manager/" "Emacs24/" "DIFX/" "desktop.ini" "Defraggler/" "CyberLink/" "Common Files/" "Classic Shell/" "CCleaner/" "Bonjour/" "Audiosurf/" "7-Zip/" "../" "./")
+
+ ("c:/Program Files/Emacs24/" (21681 42127 0 0) "var/" "share/" "libexec/" "bin/" "../" "./")
+
+ ("c:/Program Files/Emacs24/share/" (21681 42089 0 0) "man/" "info/" "icons/" "emacs/" "applications/" "../" "./")
+
+ ("c:/Users/Christian/.emacs.d/elpa/writegood-mode-20140605.734/" (21681 41871 0 0) "writegood-mode.elc" "writegood-mode.el" "writegood-mode-pkg.elc" "writegood-mode-pkg.el" "writegood-mode-autoloads.el" "../" "./")
+
+ ("c:/Program Files/Emacs24/share/info/" (21681 42089 0 0) "woman.info" "wisent.info" "widget.info" "viper.info" "vip.info" "url.info" "tramp.info" "todo-mode.info" "srecode.info" "speedbar.info" "smtpmail.info" "sieve.info" "ses.info" "semantic.info" "sc.info" "sasl.info" "remember.info" "reftex.info" "rcirc.info" "pgg.info" "pcl-cvs.info" "org.info" "octave-mode.info" "nxml-mode.info" "newsticker.info" "mh-e.info" "message.info" "mairix-el.info" "info.info" "ido.info" "idlwave.info" "htmlfontify.info" "gnus.info" "forms.info" "flymake.info" "eww.info" "eudc.info" "eshell.info" "ert.info" "erc.info" "epa.info" "emacs.info" "emacs-mime.info" "emacs-gnutls.info" "elisp.info" "eintr.info" "eieio.info" "efaq.info" "efaq-w32.info" "edt.info" "ediff.info" "ede.info" "ebrowse.info" "dired-x.info" "dir" "dbus.info" "cl.info" "ccmode.info" "calc.info" "bovine.info" "autotype.info" "auth.info" "ada-mode.info" "../" "./")
+
+ ("c:/Users/Christian/.emacs.d/elpa/yasnippet-20141223.303/snippets/python-mode/" (21681 41874 0 0) "__setitem__" "__new__" "__len__" "__getitem__" "__exit__" "__enter__" "__contains__" "with_statement" "with" "while" "utf8" "unicode" "tryelse" "try" "trace" "test_file" "test_class" "super" "str" "static" "size" "setup" "setdef" "self_without_dot" "selfassign" "self" "script" "return" "repr" "reg" "prop" "print" "pass" "parse_args" "parser" "np" "not_impl" "method_docstring" "method" "metaclass" "main" "logging" "logger_name" "list" "lambda" "iter" "ipdbdebug" "interact" "init_docstring" "init" "import" "ifmain" "ife" "if" "function_docstring" "function" "from" "for" "eq" "doctest" "doc" "django_test_class" "deftest" "dec" "cls" "classmethod" "celery_pdb" "assetNotIn" "assertTrue" "assertRaises.with" "assertRaises" "assertNotEqual" "assertIn" "assertFalse" "assertEqual" "ass" "arg_positional" "arg" "all" ".yas-setup.elc" ".yas-setup.el" ".yas-parents" "../" "./")
+
+ ("c:/Users/Christian/Dropbox/School/" (21669 9394 0 0) "Spring-15/" "Fall-14/" "../" "./")
+
+ ("c:/Users/Christian/Dropbox/School/Spring-15/" (21681 44165 0 0) "phl110.org" "mth232.org" "hst201.org" "homework.org" "eng120.org" "cs202.org" "../" "./")
+
+ ("c:/Users/" (21679 46522 0 0) "Public/" "desktop.ini" "Default.migrated/" "Default User/" "Default/" "Christian/" "All Users/" "ADMINI~1/" "../" "./")
+
+ ("c:/Program Files/Emacs24/bin/" (21681 42059 0 0) "runemacs.exe" "libXpm.dll" "grep-changelog" "etags.exe" "emacsclientw.exe" "emacsclient.exe" "emacs.exe" "emacs-24.4.exe" "ebrowse.exe" "ctags.exe" "addpm.exe" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

@@ -71,7 +71,7 @@ URxvt*foreground: white
 ! URxvt*borderColor: colour
 
 ! Select the fonts to be used. This is
-URxvt*font: xft:DejaVu Sans Mono:size=10:antialias=true
+URxvt*font: xft:Terminus:size=10
 
 ! Controls space between letters
 URxvt.letterspace: -1
