@@ -1,8 +1,18 @@
-! Tabs
-URxvt.perl-ext-common: ...,tabbed,...
+! Extensions
+! URxvt.perl-ext-common: tabbed
+
+! Colord manpages
+*VT100.colorBDMode: true
+*VT100.colorBD:     red
+*VT100.colorULMode: true
+*VT100.colorUL:     cyan
+! Url clicking
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
 
 ! Compile xft: Attempt to find a
 URxvt*depth: 32
+URxvt*background: rgba:0000/0000/0000/dddd
 
 ! Compile xft: Turn on/off double-
 ! URxvt*buffered: boolean
@@ -11,7 +21,7 @@ URxvt*depth: 32
 ! URxvt*geometry: geom
 
 ! Use the specified colour as the
-URxvt*background: [90]#000000
+! URxvt*background: [90]#000000
 
 ! Use the specified colour as the
 URxvt*foreground: white
@@ -53,7 +63,7 @@ URxvt*foreground: white
 ! URxvt*skipScroll: boolean
 
 ! Fade the text by the given
-! URxvt*fading: number
+URxvt*fading: 40
 
 ! Fade to this colour, when fading is
 ! URxvt*fadeColor: colour

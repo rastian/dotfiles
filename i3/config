@@ -13,6 +13,7 @@ set $mod Mod4
 
 # Colors
 set $blue				#4F99D3
+set $black      #000000
 set $green			#9FCA56
 set $yellow			#DCCD69
 set $red				#CE4045
@@ -38,7 +39,7 @@ bindsym $mod+Return exec --no-startup-id rxvt-unicode
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -i -p ">" -nb "$base" -nf "$white" -sb "$blue" -sf "$green"
+bindsym $mod+d exec --no-startup-id dmenu_run -i -p ">" -nb "$base" -nf "$white" -sb "$blue" -sf "$white"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -171,7 +172,6 @@ bindsym $mod+r mode "resize"
 
 
 bar {
-			 	# status_command i3status
 				status_command i3blocks
 				position top
 				font pango: Roboto 9
@@ -179,8 +179,8 @@ bar {
 				strip_workspace_numbers yes
 
 				colors {
-				# Status Line1
-				background $grey
+				# Status Line
+				background $base
 				separator $dull_white
 				statusline $white
 				# Status Bar
@@ -191,8 +191,8 @@ bar {
 				}
 }
 
-new_window pixel
-hide_edge_borders both
+for_window [class="^.*"] border pixel 0
+gaps inner 8
 
 # 								      BORDER BACKGROUND TEXT        INDICATOR
 client.focused          $blue  $blue      $base       $green
@@ -206,4 +206,4 @@ exec --no-startup-id compton -cCGb --backend glx --vsync opengl
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id ~/.dropbox-dist/dropboxd
 exec --no-startup-id sudo bash -c "echo 100000 > /proc/sys/fs/inotify/max_user_watches"
-exec --no-startup-id feh --bg-scale ~/Dropbox/Wallpapers/map_thing.jpg
+exec --no-startup-id feh --bg-scale ~/Dropbox/Wallpapers/idk.jpg

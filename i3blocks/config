@@ -24,30 +24,34 @@
 #
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
+
 command=$SCRIPT_DIR/$BLOCK_NAME
 separator_block_width=25
 markup=none
 
 # WiFi
 [wifi]
-# label=
+label=@
 command=iwconfig wlan0 | grep -oP 'ESSID:"\K\w+'
 interval=60000
-color=#ffa7da
+# color=#ffa7da
+color=#9FCA56
 
 # Uptime indicator
 [uptime]
 label=↑
 command=uptime | grep -oP 'up  \K\d+:\d+'
 interval=60
-color=#f75252
+# color=#f75252
+color=#9FCA56
 
 # Dropbox indicator
 [dropbox]
 label=☁
 command=dropbox status
 interval=60
-color=#6095c5
+# color=#6095c5
+color=#9FCA56
 
 # Volume indicator
 #
@@ -113,7 +117,8 @@ label=BAT
 label=⚡
 command=acpi | grep -o "[0-9]*%"
 interval=30
-color=#d6f046
+# color=#d6f046
+color=#9FCA56
 
 
 # Date Time
@@ -121,4 +126,5 @@ color=#d6f046
 [time]
 command=date '+%a %d %B %Y  %I:%M'
 interval=5
-color=#75daa9
+# color=#75daa9
+color=#9FCA56

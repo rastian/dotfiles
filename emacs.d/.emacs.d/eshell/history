@@ -1,0 +1,14 @@
+ls
+clear
+.
+ls
+clear
+cd ..
+cd ..
+ls
+clear
+clear
+ls
+python3 hangman.py 
+python3
+python3
