@@ -1,0 +1,70 @@
+! If you see this, it worked!
+
+! Extensions
+! URxvt.perl-ext-common: tabbed
+
+! Url clicking
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+
+! Compile xft: Attempt to find a
+URxvt*depth: 32
+URxvt*background: rgba:0000/0000/0000/dddd
+
+
+! Use the specified colour as the
+! URxvt*background: [90]#000000
+
+! Use the specified colour as the
+URxvt*foreground: white
+
+! Use the specified colour for the
+! URxvt*colorn: colour
+! 
+URxvt*colorBD: #87af5f
+
+! Use the specified colour to display
+URxvt*colorIT: #d7d7d7
+
+! Use the specified colour to display
+URxvt*colorUL: #87afd7
+
+! If set, use the specified colour as
+! URxvt*underlineColor: colour
+
+! If set, use the specified colour as
+! URxvt*highlightColor: colour
+
+! If set and highlightColor is set,
+! URxvt*highlightTextColor: colour
+
+! Use the specified colour for the
+URxvt*cursorColor: #FF69B4
+
+! Use the specified colour for the
+! URxvt*cursorColor2: colour
+! Fade the text by the given
+URxvt*fading: 40
+
+! Fade to this colour, when fading is
+! URxvt*fadeColor: colour
+
+! Set the application icon pixmap;
+! URxvt*iconFile: file
+
+! Use the specified colour for the
+! URxvt*scrollColor: colour
+
+! Use the specified colour for the
+! URxvt*troughColor: colour
+
+! The colour of the border around the
+! URxvt*borderColor: colour
+
+! Select the fonts to be used. This is
+URxvt*font: xft:Terminus:style=Regular:size=10
+
+! Controls space between letters
+URxvt.letterspace: -1
+
+URxvt*scrollBar: false
