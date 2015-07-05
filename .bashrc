@@ -106,7 +106,6 @@ if [ -x /usr/lib/command-not-found ]; then
 	}
 fi
 
-/usr/bin/mint-fortune
 ###############
 # Color Chart #
 ###############
@@ -144,8 +143,6 @@ bakcyn='\e[46m'   # Cyan
 bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
 
-# Virtualenvwrapper stuff
-source /usr/local/bin/virtualenvwrapper.sh
 
 export TERM='xterm-256color'
 export EDITOR="emacsclient -c -n"
