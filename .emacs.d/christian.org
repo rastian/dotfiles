@@ -172,7 +172,6 @@
          (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
          (setq web-mode-enable-auto-closing t)
          (setq-default tab-width 2)
-         (define-key web-mode-map (kbd "C-c /") 'web-mode-element-close-and-indent)
          (setq web-mode-enable-auto-pairing t))
      #+end_src
 
@@ -212,9 +211,11 @@
      #+end_src
 
 **** nlinum
-     #+begin_src emacs-lisp :tangle yes
+     #+begin_src emacs-lisp :tangle no
        (use-package nlinum
-         :ensure t)
+         :ensure t
+         :init
+         (global-nlinum-mode))
      #+end_src
 **** Expand-Region
      #+BEGIN_SRC emacs-lisp :tangle yes
@@ -411,7 +412,7 @@
 ** General
 *** Font
     #+BEGIN_SRC emacs-lisp :tangle yes
-      (setq default-frame-alist '((font . "DejaVu Sans Mono 10")))
+      (setq default-frame-alist '((font . "Monaco-14")))
     #+END_SRC
 *** Fringe
     #+BEGIN_SRC emacs-lisp :tangle yes
@@ -436,11 +437,11 @@
       (menu-bar-mode -1)
       (scroll-bar-mode -1)
     #+END_SRC
-*** Line and Column Numbers
+*** COMMENT Line and Column Numbers
     #+BEGIN_SRC emacs-lisp :tangle yes
       (line-number-mode 1)
-      (column-number-mode 1)
-      ;;(global-linum-mode)
+      (column-number-mode )
+      (global-linum-mode)
     #+END_SRC
 *** Battery and Time
     #+BEGIN_SRC emacs-lisp :tangle yes

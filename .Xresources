@@ -62,7 +62,7 @@ URxvt*fading: 40
 ! URxvt*borderColor: colour
 
 ! Select the fonts to be used. This is
-URxvt*font: xft:Terminus:style=Regular:size=10
+URxvt*font: xft:Terminus:style=Regular:size=14
 
 ! Controls space between letters
 URxvt.letterspace: -1

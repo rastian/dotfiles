@@ -148,7 +148,6 @@
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (setq web-mode-enable-auto-closing t)
   (setq-default tab-width 2)
-  (define-key web-mode-map (kbd "C-c /") 'web-mode-element-close-and-indent)
   (setq web-mode-enable-auto-pairing t))
 
 (use-package impatient-mode
@@ -173,9 +172,6 @@
   :ensure t
   :init
   (winner-mode))
-
-(use-package nlinum
-  :ensure t)
 
 (use-package expand-region
   :ensure t
@@ -285,7 +281,7 @@
 
 (global-prettify-symbols-mode t)
 
-(setq default-frame-alist '((font . "DejaVu Sans Mono 10")))
+(setq default-frame-alist '((font . "Monaco-14")))
 
 (fringe-mode '(8 . 0))
 
@@ -302,8 +298,8 @@
 (scroll-bar-mode -1)
 
 (line-number-mode 1)
-(column-number-mode 1)
-;;(global-linum-mode)
+(column-number-mode )
+(global-linum-mode)
 
 (display-time-mode 1)
 
