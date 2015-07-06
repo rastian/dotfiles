@@ -46,10 +46,10 @@ bindsym $mod+d exec --no-startup-id dmenu_run -i -p ">" -nb "$base" -nf "$white"
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -58,10 +58,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -70,7 +70,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+x split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -94,6 +94,10 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
 
 # Workspace Names
 set $ws1 "1:I"
@@ -174,7 +178,7 @@ bindsym $mod+r mode "resize"
 bar {
 				status_command i3blocks
 				position top
-				font pango: Roboto 9
+				font pango: Terminus 9
 				tray_output none
 				strip_workspace_numbers yes
 
@@ -192,7 +196,7 @@ bar {
 }
 
 for_window [class="^.*"] border pixel 0
-gaps inner 8
+gaps inner 10
 
 # 								      BORDER BACKGROUND TEXT        INDICATOR
 client.focused          $blue  $blue      $base       $green
@@ -202,6 +206,10 @@ client.urgent           $red   $red       $white      $yellow
 
 
 # MY OWN STUFF
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
+exec --no-startup-id xrdb ~/.Xresources
+exec --no-startup-id emacs --daemon
 exec --no-startup-id compton -cCGb --backend glx --vsync opengl
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id ~/.dropbox-dist/dropboxd
