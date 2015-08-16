@@ -6,31 +6,31 @@
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/") t)
 ;; Package List
 (defvar package-list '(
-		       use-package
-		       org
-		       helm
-		       projectile
-		       god-mode
-		       ace-jump-mode
-		       auto-complete
-		       web-mode
-		       impatient-mode
-		       autopair
-		       neotree
-		       elpy
-		       winner-mode
-		       nlinum
-		       expand-region
-		       guide-key
-		       iy-go-to-char
-		       key-chord
-		       smart-mode-line
-		       writegood-mode
-		       yasnippet
-		       speed-type
-		       auctex
-		       multiple-cursors
-		       ))
+           use-package
+           org
+           helm
+           projectile
+           god-mode
+           ace-jump-mode
+           auto-complete
+           web-mode
+           impatient-mode
+           autopair
+           neotree
+           elpy
+           winner-mode
+           nlinum
+           expand-region
+           guide-key
+           iy-go-to-char
+           key-chord
+           smart-mode-line
+           writegood-mode
+           yasnippet
+           speed-type
+           auctex
+           multiple-cursors
+           ))
 ;;; Packages
 ;; Use-Package
 (require 'use-package)
@@ -54,21 +54,21 @@
     (setq helm-candidate-number-limit 100)
     ;; From https://gist.github.com/antifuchs/9238468
     (setq helm-idle-delay 0.0 ; update fast sources immediately (doesn't).
-	  helm-input-idle-delay 0.01  ; this actually updates things
-					; reeeelatively quickly.
-	  helm-quick-update t
-	  helm-M-x-requires-pattern nil
-	  helm-ff-skip-boring-files t)
+    helm-input-idle-delay 0.01  ; this actually updates things
+          ; reeeelatively quickly.
+    helm-quick-update t
+    helm-M-x-requires-pattern nil
+    helm-ff-skip-boring-files t)
     (helm-mode))
   :bind (("C-c h" . helm-mini)
-	 ("C-h a" . helm-apropos)
-	 ("C-x C-b" . helm-buffers-list)
-	 ("C-x b" . helm-buffers-list)
-	 ("M-y" . helm-show-kill-ring)
-	 ("M-x" . helm-M-x)
-	 ("C-x c o" . helm-occur)
-	 ("C-x c s" . helm-swoop)
-	 ("C-x c SPC" . helm-all-mark-rings)))
+   ("C-h a" . helm-apropos)
+   ("C-x C-b" . helm-buffers-list)
+   ("C-x b" . helm-buffers-list)
+   ("M-y" . helm-show-kill-ring)
+   ("M-x" . helm-M-x)
+   ("C-x c o" . helm-occur)
+   ("C-x c s" . helm-swoop)
+   ("C-x c SPC" . helm-all-mark-rings)))
 (ido-mode -1)
 ;; Projectile
 (use-package projectile
@@ -93,8 +93,8 @@
   ;; Changes cursor depending on whether or not god-mode is activated
   (defun my-update-cursor ()
     (setq cursor-type (if (or god-local-mode buffer-read-only)
-			  'box
-			'bar)))
+        'box
+      'bar)))
   (add-hook 'god-mode-enabled-hook 'my-update-cursor)
   (add-hook 'god-mode-disabled-hook 'my-update-cursor)
   ;; Integrates I-search
@@ -198,16 +198,16 @@
     (setq yas--condition-cache-timestamp (current-time))
     (let (templates-and-pos)
       (unless (and yas-expand-only-for-last-commands
-		   (not (member last-command yas-expand-only-for-last-commands)))
-	(setq templates-and-pos (if field
-				    (save-restriction
-				      (narrow-to-region (yas--field-start field)
-							(yas--field-end field))
-				      (yas--templates-for-key-at-point))
-				  (yas--templates-for-key-at-point))))
+       (not (member last-command yas-expand-only-for-last-commands)))
+  (setq templates-and-pos (if field
+            (save-restriction
+              (narrow-to-region (yas--field-start field)
+              (yas--field-end field))
+              (yas--templates-for-key-at-point))
+          (yas--templates-for-key-at-point))))
 
       (set-cursor-color (if (and templates-and-pos (first templates-and-pos))
-			    "purple" "deep pink"))))
+          "purple" "deep pink"))))
 
   (add-hook 'post-command-hook 'yasnippet-can-fire-p)
 
@@ -218,38 +218,38 @@
 ;; Prettify-Symbols
 ;; Uses UTF-16
 (add-hook 'prog-mode-hook
-	  (lambda ()
-	    (push '(">=" . 8805) prettify-symbols-alist)
-	    (push '("<=" . 8804) prettify-symbols-alist)
-	    (push '("lambda" . 955) prettify-symbols-alist)
-	    (push '("!=" . 8800) prettify-symbols-alist)))
+    (lambda ()
+      (push '(">=" . 8805) prettify-symbols-alist)
+      (push '("<=" . 8804) prettify-symbols-alist)
+      (push '("lambda" . 955) prettify-symbols-alist)
+      (push '("!=" . 8800) prettify-symbols-alist)))
 (global-prettify-symbols-mode t)
 ;;; Themes
 ;; Solarized
 ;; (use-package solarized-theme
-;; 	:ensure t
-;; 	:init
-;; 	(load-theme 'solarized-dark t))
+;;  :ensure t
+;;  :init
+;;  (load-theme 'solarized-dark t))
 ;; Zenburn
 ;; (use-package zenburn-theme
-;; 	:ensure t
-;; 	:init
-;; 	(load-theme 'zenburn t))
+;;  :ensure t
+;;  :init
+;;  (load-theme 'zenburn t))
 ;; Darktooth
 (use-package darktooth-theme
-	:ensure t
-	:init
-	(load-theme 'darktooth t))
+  :ensure t
+  :init
+  (load-theme 'darktooth t))
 ;; Seti
 ;; (use-package seti-theme
-;; 	:ensure t
-;; 	:init
-;; 	(load-theme 'seti t))
+;;  :ensure t
+;;  :init
+;;  (load-theme 'seti t))
 ;; Material
 ;; (use-package material-theme
-;; 	:ensure t
-;; 	:init
-;; 	(load-theme 'material t))
+;;  :ensure t
+;;  :init
+;;  (load-theme 'material t))
 ;; Monokai
 ;; (use-package monokai-theme
 ;;   :ensure t
