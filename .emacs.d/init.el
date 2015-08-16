@@ -295,6 +295,8 @@
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
+(setq-default indent-tabs-mode nil)
+
 (when window-system
   (setq frame-title-format '(buffer-file-name "%f" ("%b"))))
 
