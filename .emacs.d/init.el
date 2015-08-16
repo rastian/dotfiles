@@ -257,6 +257,8 @@
 ;;   (load-theme 'monokai t))
 
 ;;; Options
+(add-to-list 'default-frame-alist '(font . "Inconsolata-12"))
+
 (fringe-mode '(8 . 0))
 
 (set-cursor-color "deep pink")
