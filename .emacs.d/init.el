@@ -144,11 +144,14 @@
 ;; Neotree
 (use-package neotree
   :ensure t)
+(use-package pyvenv
+	:ensure t
+	:init
+	(provide 'pyvenv))
 ;; Elpy
 (use-package elpy
   :ensure t
   :init
-  (elpy-enable)
   (setq python-indent-guess-indent-offset nil))
 ;; Winner-Mode
 (use-package winner
