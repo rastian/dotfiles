@@ -3,7 +3,6 @@ alias open="xdg-open"
 alias cdschool="cd ~/Dropbox/School/Fall-15"
 alias db="dropbox"
 alias eclipse='~/.eclipse/eclipse'
-alias fuck='sudo $(history -p \!\!)'
 alias synaptic="sudo synaptic"
 
 # Movement
@@ -12,10 +11,6 @@ alias ..='cd ../..'
 alias ...='cd ../../..'
 alias ....='cd ../../../..'
 alias c='clear'
-
-# Apt-Get
-alias aptinstall='sudo apt-get install'
-alias aptupdate='sudo apt-get update'
 
 # Games
 alias mcserver="cd ~/.minecraft_server && java -jar minecraft_server.1.8.1.jar world nogui"
