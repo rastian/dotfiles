@@ -30,6 +30,7 @@
            speed-type
            auctex
            multiple-cursors
+           slime
            ))
 ;;; Packages
 ;; Use-Package
@@ -62,7 +63,6 @@
     (helm-mode))
   :bind (("C-c h" . helm-mini)
    ("C-h a" . helm-apropos)
-   ("C-x C-b" . helm-buffers-list)
    ("C-x b" . helm-buffers-list)
    ("M-y" . helm-show-kill-ring)
    ("M-x" . helm-M-x)
@@ -144,11 +144,14 @@
 ;; Neotree
 (use-package neotree
   :ensure t)
+(use-package pyvenv
+	:ensure t
+	:init
+	(provide 'pyvenv))
 ;; Elpy
 (use-package elpy
   :ensure t
   :init
-  (elpy-enable)
   (setq python-indent-guess-indent-offset nil))
 ;; Winner-Mode
 (use-package winner
@@ -215,6 +218,14 @@
 ;; Speed-Type
 (use-package speed-type
   :ensure t)
+;; SLIME
+(use-package slime
+  :ensure t
+  :init
+  (setq inferior-lisp-program "sbcl")
+  (setq slime-auto-connect 'ask)
+  (slime-setup)
+  (add-to-list 'slime-contribs 'slime-repl))
 ;; Prettify-Symbols
 ;; Uses UTF-16
 (add-hook 'prog-mode-hook
