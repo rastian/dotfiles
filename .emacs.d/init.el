@@ -63,7 +63,6 @@
     (helm-mode))
   :bind (("C-c h" . helm-mini)
    ("C-h a" . helm-apropos)
-   ("C-x C-b" . helm-buffers-list)
    ("C-x b" . helm-buffers-list)
    ("M-y" . helm-show-kill-ring)
    ("M-x" . helm-M-x)
