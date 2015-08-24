@@ -30,6 +30,7 @@
            speed-type
            auctex
            multiple-cursors
+           slime
            ))
 ;;; Packages
 ;; Use-Package
@@ -218,6 +219,14 @@
 ;; Speed-Type
 (use-package speed-type
   :ensure t)
+;; SLIME
+(use-package slime
+  :ensure t
+  :init
+  (setq inferior-lisp-program "sbcl")
+  (setq slime-auto-connect 'ask)
+  (slime-setup)
+  (add-to-list 'slime-contribs 'slime-repl))
 ;; Prettify-Symbols
 ;; Uses UTF-16
 (add-hook 'prog-mode-hook
