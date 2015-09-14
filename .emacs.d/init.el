@@ -31,6 +31,7 @@
            auctex
            multiple-cursors
            slime
+           paredit
            ))
 ;;; Packages
 ;; Use-Package
@@ -109,6 +110,7 @@
   (global-set-key (kbd "C-x C-o") 'other-window)
   (global-set-key (kbd "C-x C-k") 'kill-buffer)
   (global-set-key (kbd "C-x C-d") 'dired)
+  (global-set-key (kbd "C-x SPC") 'set-mark-command)
   ;; Winner-mode bindings
   (global-set-key (kbd "C-c C-<left>") 'winner-undo)
   (global-set-key (kbd "C-c C-<right>") 'winner-redo))
@@ -226,6 +228,23 @@
   (setq slime-auto-connect 'ask)
   (slime-setup)
   (add-to-list 'slime-contribs 'slime-repl))
+;; Paredit
+(use-package paredit
+  :ensure t
+  :init
+  (autoload 'enable-paredit-mode "paredit"
+    "Turn on pseudo-structural editing of Lisp code"
+    t)
+  (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+  (add-hook 'lisp-mode-hook 'enable-paredit-mode)
+  (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode))
+;; ElDoc
+(use-package eldoc
+  :ensure t
+  :init
+  (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+  (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+  (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode))
 ;; Prettify-Symbols
 ;; Uses UTF-16
 (add-hook 'prog-mode-hook
@@ -247,15 +266,15 @@
 ;;  :init
 ;;  (load-theme 'zenburn t))
 ;; Darktooth
-(use-package darktooth-theme
-  :ensure t
-  :init
-  (load-theme 'darktooth t))
+;; (use-package darktooth-theme
+;;   :ensure t
+;;   :init
+;;   (load-theme 'darktooth t))
 ;; Seti
-;; (use-package seti-theme
-;;  :ensure t
-;;  :init
-;;  (load-theme 'seti t))
+(use-package seti-theme
+ :ensure t
+ :init
+ (load-theme 'seti t))
 ;; Material
 ;; (use-package material-theme
 ;;  :ensure t
@@ -312,3 +331,5 @@
   (setq frame-title-format '(buffer-file-name "%f" ("%b"))))
 
 (setq echo-keystrokes 0.1)
+
+(setq c-default-style "bsd")

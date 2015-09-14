@@ -146,3 +146,6 @@ txtrst='\e[0m'    # Text Reset
 
 export TERM='xterm-256color'
 export EDITOR="emacsclient -c -n"
+export PATH=$HOME/bin:$PATH
+export PATH=/sbin:$PATH
+export school=~/Dropbox/School/Fall-15
