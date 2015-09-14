@@ -287,7 +287,7 @@
 ;;   (load-theme 'monokai t))
 
 ;;; Options
-(add-to-list 'default-frame-alist '(font . "Inconsolata-12"))
+;; (add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
 
 (fringe-mode '(8 . 0))
 
@@ -333,3 +333,4 @@
 (setq echo-keystrokes 0.1)
 
 (setq c-default-style "bsd")
+(setq c-basic-offset 4)
