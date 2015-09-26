@@ -3,8 +3,9 @@ alias open="xdg-open"
 alias cdschool="cd ~/Dropbox/School/Fall-15"
 alias db="dropbox"
 alias eclipse='~/.eclipse/eclipse'
-alias fuck='sudo $(history -p \!\!)'
 alias synaptic="sudo synaptic"
+alias wiki="python3 ~/Dropbox/Projects/wiki-cli/wiki.py"
+alias todo="python3 ~/Dropbox/Projects/todo/todo.py"
 
 # Movement
 alias .='cd ..'
