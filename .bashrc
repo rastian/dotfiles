@@ -146,3 +146,7 @@ txtrst='\e[0m'    # Text Reset
 
 export TERM='xterm-256color'
 export EDITOR="emacsclient -c -n"
+export PATH=$HOME/bin:$PATH
+export PATH=/sbin:$PATH
+export PATH=/usr/local/netbeans-8.0.2/bin:$PATH
+export school=~/Dropbox/School/Fall-15

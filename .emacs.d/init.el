@@ -31,6 +31,8 @@
            auctex
            multiple-cursors
            slime
+           paredit
+           ace-window
            ))
 ;;; Packages
 ;; Use-Package
@@ -109,6 +111,7 @@
   (global-set-key (kbd "C-x C-o") 'other-window)
   (global-set-key (kbd "C-x C-k") 'kill-buffer)
   (global-set-key (kbd "C-x C-d") 'dired)
+  (global-set-key (kbd "C-x SPC") 'set-mark-command)
   ;; Winner-mode bindings
   (global-set-key (kbd "C-c C-<left>") 'winner-undo)
   (global-set-key (kbd "C-c C-<right>") 'winner-redo))
@@ -226,6 +229,38 @@
   (setq slime-auto-connect 'ask)
   (slime-setup)
   (add-to-list 'slime-contribs 'slime-repl))
+;; Paredit
+(use-package paredit
+  :ensure t
+  :init
+  (autoload 'enable-paredit-mode "paredit"
+    "Turn on pseudo-structural editing of Lisp code"
+    t)
+  (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+  (add-hook 'lisp-mode-hook 'enable-paredit-mode)
+  (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode))
+;; ElDoc
+(use-package eldoc
+  :ensure t
+  :init
+  (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+  (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+  (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode))
+;;; Ace-Window
+(use-package ace-window
+  :ensure t
+  :init
+  (global-set-key (kbd "M-p") 'ace-window)
+  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+  (defvar aw-dispatch-alist
+    '((?x aw-delete-window " Ace - Delete Window")
+      (?m aw-swap-window " Ace - Swap Window")
+      (?n aw-flip-window)
+      (?v aw-split-window-vert " Ace - Split Vert Window")
+      (?b aw-split-window-horz " Ace - Split Horz Window")
+      (?i delete-other-windows " Ace - Maximize Window")
+      (?o delete-other-windows))
+    "List of actions for `aw-dispatch-default'."))
 ;; Prettify-Symbols
 ;; Uses UTF-16
 (add-hook 'prog-mode-hook
@@ -242,15 +277,15 @@
 ;;  :init
 ;;  (load-theme 'solarized-dark t))
 ;; Zenburn
-;; (use-package zenburn-theme
-;;  :ensure t
-;;  :init
-;;  (load-theme 'zenburn t))
-;; Darktooth
-(use-package darktooth-theme
+(use-package zenburn-theme
   :ensure t
   :init
-  (load-theme 'darktooth t))
+  (load-theme 'zenburn t))
+;; Darktooth
+;; (use-package darktooth-theme
+;;   :ensure t
+;;   :init
+;;   (load-theme 'darktooth t))
 ;; Seti
 ;; (use-package seti-theme
 ;;  :ensure t
@@ -268,7 +303,7 @@
 ;;   (load-theme 'monokai t))
 
 ;;; Options
-(add-to-list 'default-frame-alist '(font . "Inconsolata-12"))
+;; (add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
 
 (fringe-mode '(8 . 0))
 
@@ -312,3 +347,6 @@
   (setq frame-title-format '(buffer-file-name "%f" ("%b"))))
 
 (setq echo-keystrokes 0.1)
+
+(setq c-default-style "bsd")
+(setq c-basic-offset 4)
