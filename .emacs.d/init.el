@@ -32,6 +32,7 @@
            multiple-cursors
            slime
            paredit
+           ace-window
            ))
 ;;; Packages
 ;; Use-Package
@@ -245,6 +246,21 @@
   (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
   (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
   (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode))
+;;; Ace-Window
+(use-package ace-window
+  :ensure t
+  :init
+  (global-set-key (kbd "M-p") 'ace-window)
+  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+  (defvar aw-dispatch-alist
+    '((?x aw-delete-window " Ace - Delete Window")
+      (?m aw-swap-window " Ace - Swap Window")
+      (?n aw-flip-window)
+      (?v aw-split-window-vert " Ace - Split Vert Window")
+      (?b aw-split-window-horz " Ace - Split Horz Window")
+      (?i delete-other-windows " Ace - Maximize Window")
+      (?o delete-other-windows))
+    "List of actions for `aw-dispatch-default'."))
 ;; Prettify-Symbols
 ;; Uses UTF-16
 (add-hook 'prog-mode-hook
@@ -261,20 +277,20 @@
 ;;  :init
 ;;  (load-theme 'solarized-dark t))
 ;; Zenburn
-;; (use-package zenburn-theme
-;;  :ensure t
-;;  :init
-;;  (load-theme 'zenburn t))
+(use-package zenburn-theme
+  :ensure t
+  :init
+  (load-theme 'zenburn t))
 ;; Darktooth
 ;; (use-package darktooth-theme
 ;;   :ensure t
 ;;   :init
 ;;   (load-theme 'darktooth t))
 ;; Seti
-(use-package seti-theme
- :ensure t
- :init
- (load-theme 'seti t))
+;; (use-package seti-theme
+;;  :ensure t
+;;  :init
+;;  (load-theme 'seti t))
 ;; Material
 ;; (use-package material-theme
 ;;  :ensure t
