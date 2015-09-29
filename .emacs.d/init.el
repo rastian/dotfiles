@@ -34,20 +34,22 @@
            paredit
            ace-window
            ))
+
 ;;; Packages
-;; Use-Package
+;; use-package
 (require 'use-package)
-;; Org
+
+;; org
 (use-package org
   :ensure t
-  :init
-  (setq org-log-done t)                 ; Logs TODO -> DONE
-  ;; Activates Org Babel execution
+  :config
+  (setq org-log-done t)
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((python . t)
      (java . t))))
-;; Helm
+
+;; helm
 (use-package helm
   :ensure t
   :diminish helm-mode
@@ -71,23 +73,24 @@
    ("C-x c o" . helm-occur)
    ("C-x c s" . helm-swoop)
    ("C-x c SPC" . helm-all-mark-rings)))
-(ido-mode -1)
-;; Projectile
+
+;; projectile
 (use-package projectile
   :ensure t
-  :defer t
   :diminish projectile-mode
   :init
   (setq projectile-keymap-prefix (kbd "C-c p"))
   (setq projectile-completion-system 'helm)
-  (setq projectile-enable-cachingt )
+  (setq projectile-enable-caching t)
   (projectile-global-mode))
 
+;; helm-projectile
 (use-package helm-projectile
   :ensure t
   :defer t
   :ensure helm-projectile)
-;; God-mode
+
+;; god-mode
 (use-package god-mode
   :ensure t
   :init
@@ -115,63 +118,75 @@
   ;; Winner-mode bindings
   (global-set-key (kbd "C-c C-<left>") 'winner-undo)
   (global-set-key (kbd "C-c C-<right>") 'winner-redo))
-;; Ace-Jump
+
+;; ace-jump
 (use-package ace-jump-mode
   :ensure t
   :init
   (bind-key "C-c SPC" 'ace-jump-mode))
-;; Auto-Complete
+
+;; auto-complete
 (use-package auto-complete
   :ensure t
   :diminish auto-complete-mode
-  :init
+  :config
   (progn
     (global-auto-complete-mode t)))
-;; Web-Mode
+
+;; web-mode
 (use-package web-mode
   :ensure t
-  :init
+  :config
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (setq web-mode-enable-auto-closing t)
   (setq-default tab-width 2)
   (setq web-mode-enable-auto-pairing t))
-;; Impatient-Mode
+
+;; impatient-mode
 (use-package impatient-mode
   :ensure t)
-;; Autopair
+
+;; autopair
 (use-package autopair
   :ensure t
   :diminish autopair-mode
-  :init
+  :config
   (autopair-global-mode t))
-;; Neotree
+
+;; neotree
 (use-package neotree
   :ensure t)
+
 (use-package pyvenv
 	:ensure t
-	:init
+	:config
 	(provide 'pyvenv))
-;; Elpy
+
+;; elpy
 (use-package elpy
   :ensure t
-  :init
+  :config
   (setq python-indent-guess-indent-offset nil))
-;; Winner-Mode
+
+;; winner
 (use-package winner
   :ensure t
   :init
   (winner-mode))
-;; Nlinum-Mode
+
+;; nlinum
 (use-package nlinum
   :ensure t
   :init
   (global-nlinum-mode))
-;; Expand-Region
+
+;; expand-region
 (use-package expand-region
   :ensure t
   :init
   (global-set-key (kbd "C-=") 'er/expand-region))
-;; Guide-Key
+
+;; guide-key
 (use-package guide-key
   :ensure t
   :diminish guide-key-mode
@@ -181,21 +196,24 @@
     (guide-key-mode 1)
     (setq guide-key/recursive-key-sequence-flag t)
     (setq guide-key/popup-window-position 'bottom)))
-;; Smart-Mode-Line
+
+;; smart-mode-line
 (use-package smart-mode-line
   :ensure t
   :init
   (setq sml/no-confirm-load-theme t)
   (setq sml/theme 'respectful)
   (sml/setup))
-;; Multiple-Cursors
+
+;; multiple-cursors
 (use-package multiple-cursors
   :ensure t
   :init
   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
-;; Yasnippet
+
+;; yasnippet
 (use-package yasnippet
   :ensure t
   :init
@@ -218,35 +236,40 @@
   (add-hook 'post-command-hook 'yasnippet-can-fire-p)
 
   (yas-global-mode 1))
-;; Speed-Type
+
+;; speed-type
 (use-package speed-type
   :ensure t)
-;; SLIME
+
+;; slime
 (use-package slime
   :ensure t
-  :init
+  :config
   (setq inferior-lisp-program "sbcl")
   (setq slime-auto-connect 'ask)
   (slime-setup)
   (add-to-list 'slime-contribs 'slime-repl))
-;; Paredit
+
+;; paredit
 (use-package paredit
   :ensure t
-  :init
+  :config
   (autoload 'enable-paredit-mode "paredit"
     "Turn on pseudo-structural editing of Lisp code"
     t)
   (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
   (add-hook 'lisp-mode-hook 'enable-paredit-mode)
   (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode))
-;; ElDoc
+
+;; eldoc
 (use-package eldoc
   :ensure t
-  :init
+  :config
   (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
   (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
   (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode))
-;;; Ace-Window
+
+;;; ace-window
 (use-package ace-window
   :ensure t
   :init
@@ -261,6 +284,7 @@
       (?i delete-other-windows " Ace - Maximize Window")
       (?o delete-other-windows))
     "List of actions for `aw-dispatch-default'."))
+
 ;; Prettify-Symbols
 ;; Uses UTF-16
 (add-hook 'prog-mode-hook
@@ -270,6 +294,7 @@
       (push '("lambda" . 955) prettify-symbols-alist)
       (push '("!=" . 8800) prettify-symbols-alist)))
 (global-prettify-symbols-mode t)
+
 ;;; Themes
 ;; Solarized
 ;; (use-package solarized-theme
