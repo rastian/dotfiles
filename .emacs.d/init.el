@@ -402,6 +402,14 @@
 
 ;;; Themes
 
+;; Spacemacs
+(use-package spacemacs-theme
+	:ensure t
+	:init
+	(load-theme 'spacemacs-dark t)
+	;; (load-theme 'spacemacs-light t)
+	)
+
 ;; Solarized
 ;; (use-package solarized-theme
 ;;  :ensure t
