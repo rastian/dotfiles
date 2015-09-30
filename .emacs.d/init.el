@@ -46,7 +46,9 @@
 ;; use-package
 (require 'use-package)
 
-;; org
+;;; org
+;; For keeping notes, maintaining TODO lists, planning projects, and
+;; authoring documents with a fast and effective plain-text system.
 (use-package org
   :ensure t
   :config
@@ -56,7 +58,8 @@
    '((python . t)
      (java . t))))
 
-;; helm
+;;; helm
+;; An incremental completion and selection narrowing framework for Emacs. 
 (use-package helm
   :ensure t
   :diminish helm-mode
@@ -82,7 +85,8 @@
    ("C-x c s" . helm-swoop)
    ("C-x c SPC" . helm-all-mark-rings)))
 
-;; projectile
+;;; projectile
+;; A project interaction library for Emacs
 (use-package projectile
   :ensure t
   :diminish projectile-mode
@@ -92,22 +96,27 @@
   (setq projectile-enable-caching t)
   (projectile-global-mode))
 
-;; helm-projectile
+;;; helm-projectile
+;; helm and projectile integration
+
 (use-package helm-projectile
   :ensure t
   :defer t
   :ensure helm-projectile)
 
-;; god-mode
+;;; god-mode
+;; Global minor mode for entering Emacs commands without modifier keys
 (use-package god-mode
   :ensure t
   :init
   (global-set-key (kbd "<escape>") 'god-mode-all)
+	(setq god-exempt-major-modes nil)
+	(setq god-exempt-predicates)
   ;; Changes cursor depending on whether or not god-mode is activated
   (defun my-update-cursor ()
     (setq cursor-type (if (or god-local-mode buffer-read-only)
-        'box
-      'bar)))
+													'box
+												'bar)))
   (add-hook 'god-mode-enabled-hook 'my-update-cursor)
   (add-hook 'god-mode-disabled-hook 'my-update-cursor)
   ;; Integrates I-search
@@ -127,7 +136,8 @@
   (global-set-key (kbd "C-c C-<left>") 'winner-undo)
   (global-set-key (kbd "C-c C-<right>") 'winner-redo))
 
-;; yasnippet
+;;; yasnippet
+;;  A template system for Emacs
 (use-package yasnippet
   :ensure t
 	:diminish yas-minor-mode
@@ -152,41 +162,40 @@
 
   (yas-global-mode 1))
 
-;; magit
-;; (use-package magit
-;; 	:ensure t
-;; 	:init
-;; 	(global-set-key (kbd "C-x g") 'magit-status))
+;;; magit
+;; Magit is an interface to the version control system Git,
+;; implemented as an Emacs package.
+(use-package magit
+	:ensure t
+	:init
+	(global-set-key (kbd "C-x g") 'magit-status))
 
-;; company
+
+;;; company
+;; Modular in-buffer completion framework for Emacs
 (use-package company
 	:ensure t
 	:diminish company-mode
 	:config
 	(global-company-mode 1))
 
-;; flycheck
+;;; flycheck
+;; Modern on the fly syntax checking for GNU Emacs
 (use-package flycheck
 	:ensure t
 	:diminish flycheck-mode
 	:config
 	(global-flycheck-mode 1))
 
-;; ace-jump
+;;; ace-jump
+;; A quick cursor jump mode for emacs
 (use-package ace-jump-mode
   :ensure t
   :init
   (bind-key "C-c SPC" 'ace-jump-mode))
 
-;; auto-complete
-;; (use-package auto-complete
-;;   :ensure t
-;;   :diminish auto-complete-mode
-;;   :config
-;;   (progn
-;;     (global-auto-complete-mode t)))
-
-;; web-mode
+;;; web-mode
+;; web template editing mode for emacs
 (use-package web-mode
   :ensure t
   :config
@@ -195,46 +204,58 @@
   (setq-default tab-width 2)
   (setq web-mode-enable-auto-pairing t))
 
-;; impatient-mode
+;;; impatient-mode
+;; See the effect of your HTML as you type it.
 (use-package impatient-mode
   :ensure t)
 
-;; autopair
+;;; autopair
+;; Automagically pair braces and quotes in emacs like TextMate 
 (use-package autopair
   :ensure t
   :diminish autopair-mode
   :config
   (autopair-global-mode t))
 
-;; pyvenv
+;;; pyvenv
+;; Python virtual environment interface for Emacs 
 (use-package pyvenv
 	:ensure t
 	:config
 	(provide 'pyvenv))
 
-;; elpy
+;;; elpy
+;; Emacs Python Development Environment 
 (use-package elpy
   :ensure t
   :config
   (setq python-indent-guess-indent-offset nil))
 
-;; winner
+;;; winner
+;; Winner mode is a global minor mode that records the changes in
+;; the window configuration (i.e. how the frames are partitioned into
+;; windows) so that the changes can be "undone" using the command
+;; 'winner-undo'.
 (use-package winner
   :ensure t
   :init
   (winner-mode))
 
-;; nlinum
+;;; nlinum
+;; Lighter replacement for linum
 (use-package nlinum
   :ensure t)
 
-;; expand-region
+;;; expand-region
+;; Emacs extension to increase selected region by semantic units
 (use-package expand-region
   :ensure t
   :init
   (global-set-key (kbd "C-=") 'er/expand-region))
 
-;; guide-key
+;;; guide-key
+;; Guide following keys to an input key sequence automatically and
+;; dynamically in Emacs.
 (use-package guide-key
   :ensure t
   :diminish guide-key-mode
@@ -245,7 +266,8 @@
     (setq guide-key/recursive-key-sequence-flag t)
     (setq guide-key/popup-window-position 'bottom)))
 
-;; powerline
+;;; powerline
+;; Powerline in Emacs
 (use-package powerline
 	:ensure t)
 
@@ -259,7 +281,8 @@
 ;; 	(setq spaceline-workspace-numbers-unicode t)
 ;; 	(setq spaceline-window-numbers-unicode t))
 
-;; smart-mode-line
+;;; smart-mode-line
+;; A powerful and beautiful mode-line for Emacs. 
 (use-package smart-mode-line
   :ensure t
   :init
@@ -267,7 +290,8 @@
   (setq sml/theme 'respectful)
   (sml/setup))
 
-;; multiple-cursors
+;;; multiple-cursors
+;; Multiple cursors for emacs. 
 (use-package multiple-cursors
   :ensure t
   :init
@@ -275,11 +299,13 @@
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
 
-;; speed-type
+;;; speed-type
+;; Tests WPM
 (use-package speed-type
   :ensure t)
 
-;; slime
+;;; slime
+;; The Superior Lisp Interaction Mode for Emacs
 (use-package slime
   :ensure t
   :config
@@ -288,7 +314,8 @@
   (slime-setup)
   (add-to-list 'slime-contribs 'slime-repl))
 
-;; paredit
+;;; paredit
+;; A minor mode for performing structured editing of S-expression data.
 (use-package paredit
   :ensure t
   :config
@@ -300,6 +327,9 @@
   (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode))
 
 ;; eldoc
+;; A very simple but effective thing, eldoc-mode is a MinorMode which
+;; shows you, in the echo area, the argument list of the function call
+;; you are currently writing.
 (use-package eldoc
   :ensure t
   :config
@@ -308,6 +338,7 @@
   (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode))
 
 ;;; ace-window
+;;  Quickly switch windows in Emacs 
 (use-package ace-window
   :ensure t
   :init
@@ -323,7 +354,9 @@
       (?o delete-other-windows))
     "List of actions for `aw-dispatch-default'."))
 
-;; anzu
+;;; anzu
+;; Displays current match and total matches information in the
+;; mode-line in various search modes.
 (use-package anzu
 	:ensure t
 	:diminish anzu-mode
@@ -333,20 +366,25 @@
 	(global-set-key (kbd "M-%") 'anzu-query-replace)
 	(global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp))
 
-;; window-numbering
+;;; window-numbering
+;; Numbers windows and allows switching using M-{window-num}
 (use-package window-numbering
 	:ensure t
 	:config
 	(window-numbering-mode 1))
 
-;; eyebrowse
+;;; eyebrowse
+;; A global minor mode for Emacs that allows you to manage your window
+;; configurations in a simple manner, just like tiling window managers
+;; like i3wm with their workspaces do
 (use-package eyebrowse
 	:ensure t
 	:diminish eyebrowse-mode
 	:config
 	(eyebrowse-mode t))
 
-;; fancy-battery
+;;; fancy-battery
+;; Display battery in Emacs Mode line 
 (use-package fancy-battery
 	:ensure t
 	:init
@@ -447,3 +485,5 @@
 
 (setq c-default-style "bsd")
 (setq c-basic-offset 4)
+
+;;; init.el ends here
