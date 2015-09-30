@@ -1,38 +1,45 @@
+;;; package --- init.el
+;;; Code:
+
 (package-initialize)
 (require 'package)
+
 ;; Package Sources
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/") t)
+
 ;; Package List
 (defvar package-list '(
-           use-package
-           org
-           helm
-           projectile
-           god-mode
-           ace-jump-mode
-           auto-complete
-           web-mode
-           impatient-mode
-           autopair
-           neotree
-           elpy
-           winner-mode
-           nlinum
-           expand-region
-           guide-key
-           iy-go-to-char
-           key-chord
-           smart-mode-line
-           writegood-mode
-           yasnippet
-           speed-type
-           auctex
-           multiple-cursors
-           slime
-           paredit
-           ace-window
+											 org
+											 helm
+											 helm-projectile
+											 god-mode
+											 yasnippet
+											 company
+											 flycheck
+											 ace-jump-mode
+											 web-mode
+											 impatient-mode
+											 autopair
+											 pyvenv
+											 elpy
+											 winner
+											 nlinum
+											 expand-region
+											 guide-key
+											 powerline
+											 smart-mode-line
+											 multiple-cursors
+											 speed-type
+											 slime
+											 paredit
+											 eldoc
+											 ace-window
+											 anzu
+											 window-numbering
+											 eyebrowse
+											 fancy-battery
            ))
 
 ;;; Packages
@@ -65,7 +72,8 @@
     helm-M-x-requires-pattern nil
     helm-ff-skip-boring-files t)
     (helm-mode))
-  :bind (("C-c h" . helm-mini)
+  :bind
+  (("C-c h" . helm-mini)
    ("C-h a" . helm-apropos)
    ("C-x b" . helm-buffers-list)
    ("M-y" . helm-show-kill-ring)
@@ -119,6 +127,51 @@
   (global-set-key (kbd "C-c C-<left>") 'winner-undo)
   (global-set-key (kbd "C-c C-<right>") 'winner-redo))
 
+;; yasnippet
+(use-package yasnippet
+  :ensure t
+	:diminish yas-minor-mode
+  :init
+  (defun yasnippet-can-fire-p (&optional field)
+    (interactive)
+    (setq yas--condition-cache-timestamp (current-time))
+    (let (templates-and-pos)
+      (unless (and yas-expand-only-for-last-commands
+       (not (member last-command yas-expand-only-for-last-commands)))
+  (setq templates-and-pos (if field
+            (save-restriction
+              (narrow-to-region (yas--field-start field)
+              (yas--field-end field))
+              (yas--templates-for-key-at-point))
+          (yas--templates-for-key-at-point))))
+
+      (set-cursor-color (if (and templates-and-pos (first templates-and-pos))
+          "purple" "white"))))
+
+  (add-hook 'post-command-hook 'yasnippet-can-fire-p)
+
+  (yas-global-mode 1))
+
+;; magit
+;; (use-package magit
+;; 	:ensure t
+;; 	:init
+;; 	(global-set-key (kbd "C-x g") 'magit-status))
+
+;; company
+(use-package company
+	:ensure t
+	:diminish company-mode
+	:config
+	(global-company-mode 1))
+
+;; flycheck
+(use-package flycheck
+	:ensure t
+	:diminish flycheck-mode
+	:config
+	(global-flycheck-mode 1))
+
 ;; ace-jump
 (use-package ace-jump-mode
   :ensure t
@@ -126,12 +179,12 @@
   (bind-key "C-c SPC" 'ace-jump-mode))
 
 ;; auto-complete
-(use-package auto-complete
-  :ensure t
-  :diminish auto-complete-mode
-  :config
-  (progn
-    (global-auto-complete-mode t)))
+;; (use-package auto-complete
+;;   :ensure t
+;;   :diminish auto-complete-mode
+;;   :config
+;;   (progn
+;;     (global-auto-complete-mode t)))
 
 ;; web-mode
 (use-package web-mode
@@ -153,10 +206,7 @@
   :config
   (autopair-global-mode t))
 
-;; neotree
-(use-package neotree
-  :ensure t)
-
+;; pyvenv
 (use-package pyvenv
 	:ensure t
 	:config
@@ -176,9 +226,7 @@
 
 ;; nlinum
 (use-package nlinum
-  :ensure t
-  :init
-  (global-nlinum-mode))
+  :ensure t)
 
 ;; expand-region
 (use-package expand-region
@@ -197,6 +245,20 @@
     (setq guide-key/recursive-key-sequence-flag t)
     (setq guide-key/popup-window-position 'bottom)))
 
+;; powerline
+(use-package powerline
+	:ensure t)
+
+;; spaceline
+;; (use-package spaceline-config
+;; 	:load-path "elisp/spaceline/"
+;; 	:init
+;; 	(defvar spaceline-workspace-numbers-unicode)
+;; 	(defvar spaceline-window-numbers-unicode)
+;; 	(spaceline-emacs-theme)
+;; 	(setq spaceline-workspace-numbers-unicode t)
+;; 	(setq spaceline-window-numbers-unicode t))
+
 ;; smart-mode-line
 (use-package smart-mode-line
   :ensure t
@@ -213,30 +275,6 @@
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
 
-;; yasnippet
-(use-package yasnippet
-  :ensure t
-  :init
-  (defun yasnippet-can-fire-p (&optional field)
-    (interactive)
-    (setq yas--condition-cache-timestamp (current-time))
-    (let (templates-and-pos)
-      (unless (and yas-expand-only-for-last-commands
-       (not (member last-command yas-expand-only-for-last-commands)))
-  (setq templates-and-pos (if field
-            (save-restriction
-              (narrow-to-region (yas--field-start field)
-              (yas--field-end field))
-              (yas--templates-for-key-at-point))
-          (yas--templates-for-key-at-point))))
-
-      (set-cursor-color (if (and templates-and-pos (first templates-and-pos))
-          "purple" "deep pink"))))
-
-  (add-hook 'post-command-hook 'yasnippet-can-fire-p)
-
-  (yas-global-mode 1))
-
 ;; speed-type
 (use-package speed-type
   :ensure t)
@@ -246,7 +284,7 @@
   :ensure t
   :config
   (setq inferior-lisp-program "sbcl")
-  (setq slime-auto-connect 'ask)
+  (setq slime-auto-start 'ask)
   (slime-setup)
   (add-to-list 'slime-contribs 'slime-repl))
 
@@ -285,6 +323,35 @@
       (?o delete-other-windows))
     "List of actions for `aw-dispatch-default'."))
 
+;; anzu
+(use-package anzu
+	:ensure t
+	:diminish anzu-mode
+	:config
+	(global-anzu-mode 1)
+	:init
+	(global-set-key (kbd "M-%") 'anzu-query-replace)
+	(global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp))
+
+;; window-numbering
+(use-package window-numbering
+	:ensure t
+	:config
+	(window-numbering-mode 1))
+
+;; eyebrowse
+(use-package eyebrowse
+	:ensure t
+	:diminish eyebrowse-mode
+	:config
+	(eyebrowse-mode t))
+
+;; fancy-battery
+(use-package fancy-battery
+	:ensure t
+	:init
+	(fancy-battery-mode 1))
+
 ;; Prettify-Symbols
 ;; Uses UTF-16
 (add-hook 'prog-mode-hook
@@ -296,31 +363,37 @@
 (global-prettify-symbols-mode t)
 
 ;;; Themes
+
 ;; Solarized
 ;; (use-package solarized-theme
 ;;  :ensure t
 ;;  :init
 ;;  (load-theme 'solarized-dark t))
+
 ;; Zenburn
 (use-package zenburn-theme
   :ensure t
   :init
   (load-theme 'zenburn t))
+
 ;; Darktooth
 ;; (use-package darktooth-theme
 ;;   :ensure t
 ;;   :init
 ;;   (load-theme 'darktooth t))
+
 ;; Seti
 ;; (use-package seti-theme
 ;;  :ensure t
 ;;  :init
 ;;  (load-theme 'seti t))
+
 ;; Material
 ;; (use-package material-theme
 ;;  :ensure t
 ;;  :init
 ;;  (load-theme 'material t))
+
 ;; Monokai
 ;; (use-package monokai-theme
 ;;   :ensure t
@@ -332,7 +405,7 @@
 
 (fringe-mode '(8 . 0))
 
-(set-cursor-color "deep pink")
+(set-cursor-color "white")
 (blink-cursor-mode 0)
 
 (setq inhibit-splash-screen t)
@@ -345,8 +418,8 @@
 (scroll-bar-mode -1)
 
 (line-number-mode 1)
-(column-number-mode )
-(global-linum-mode)
+(column-number-mode)
+(global-nlinum-mode)
 
 (setq default-directory "~/" )
 
@@ -366,7 +439,6 @@
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
-(setq-default indent-tabs-mode nil)
 
 (when window-system
   (setq frame-title-format '(buffer-file-name "%f" ("%b"))))
