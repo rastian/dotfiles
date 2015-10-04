@@ -480,7 +480,6 @@
 
 (line-number-mode 1)
 (column-number-mode)
-(global-nlinum-mode)
 
 (setq default-directory "~/" )
 
