@@ -39,7 +39,7 @@
 											 anzu
 											 window-numbering
 											 eyebrowse
-											 fancy-battery
+											 org-present
            ))
 
 ;;; Packages
@@ -272,14 +272,14 @@
 	:ensure t)
 
 ;; spaceline
-;; (use-package spaceline-config
-;; 	:load-path "elisp/spaceline/"
-;; 	:init
-;; 	(defvar spaceline-workspace-numbers-unicode)
-;; 	(defvar spaceline-window-numbers-unicode)
-;; 	(spaceline-emacs-theme)
-;; 	(setq spaceline-workspace-numbers-unicode t)
-;; 	(setq spaceline-window-numbers-unicode t))
+(use-package spaceline-config
+	:load-path "elisp/spaceline/"
+	:config
+	(defvar spaceline-workspace-numbers-unicode)
+	(defvar spaceline-window-numbers-unicode)
+	(spaceline-spacemacs-theme)
+	(setq spaceline-workspace-numbers-unicode t)
+	(setq spaceline-window-numbers-unicode t))
 
 ;;; smart-mode-line
 ;; A powerful and beautiful mode-line for Emacs. 
@@ -383,12 +383,27 @@
 	:config
 	(eyebrowse-mode t))
 
-;;; fancy-battery
-;; Display battery in Emacs Mode line 
-(use-package fancy-battery
+;;; org-present
+;; Ultra-minimalist presentation minor-mode for Emacs org-mode
+(use-package org-present
 	:ensure t
-	:init
-	(fancy-battery-mode 1))
+	:config
+	(add-hook 'org-present-mode-hook
+						(lambda ()
+							(org-present-big)
+							(org-display-inline-images)
+							(org-present-hide-cursor)
+							(org-present-read-only)
+							(nlinum-mode 0)
+							(linum-mode 0)
+							(global-hl-line-mode 0)))
+	(add-hook 'org-present-mode-quit-hook
+						(lambda ()
+							(org-present-small)
+							(org-remove-inline-images)
+							(org-present-show-cursor)
+							(org-present-read-write)
+							(global-hl-line-mode 1))))
 
 ;; Prettify-Symbols
 ;; Uses UTF-16
@@ -417,10 +432,10 @@
 ;;  (load-theme 'solarized-dark t))
 
 ;; Zenburn
-(use-package zenburn-theme
-  :ensure t
-  :init
-  (load-theme 'zenburn t))
+;; (use-package zenburn-theme
+;;   :ensure t
+;;   :init
+;;   (load-theme 'zenburn t))
 
 ;; Darktooth
 ;; (use-package darktooth-theme
