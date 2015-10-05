@@ -135,7 +135,7 @@ WHITE='\[\e[0;37m\]'
 BWHITE='\[\e[1;37m\]'
 BGWHITE='\[\e[1;37m\]'
 
-export PS1="\[\033[38;5;39m\]\u@\H\[$(tput sgr0)\]\[\033[38;5;84m\] in \w\[$(tput sgr0)\]\[\033[38;5;15m\]\n\\$\[$(tput sgr0)\] "
+export PS1="\[\033[38;5;39m\]\u@\H\[$(tput sgr0)\]\[\033[38;5;84m\] \e[97min \e[32m\w\[$(tput sgr0)\]\[\033[38;5;15m\]\n\\$\[$(tput sgr0)\] "
 export TERM='xterm-256color'
 export EDITOR="emacsclient -c -n"
 export PATH=$HOME/bin:$PATH
