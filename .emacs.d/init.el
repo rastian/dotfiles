@@ -56,7 +56,8 @@
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((python . t)
-     (java . t))))
+     (java . t)))
+	(setq org-ellipsis "◦◦◦"))
 
 ;;; helm
 ;; An incremental completion and selection narrowing framework for Emacs. 
@@ -277,18 +278,18 @@
 	:config
 	(defvar spaceline-workspace-numbers-unicode)
 	(defvar spaceline-window-numbers-unicode)
-	(spaceline-spacemacs-theme)
+	(spaceline-emacs-theme)
 	(setq spaceline-workspace-numbers-unicode t)
 	(setq spaceline-window-numbers-unicode t))
 
 ;;; smart-mode-line
 ;; A powerful and beautiful mode-line for Emacs. 
-(use-package smart-mode-line
-  :ensure t
-  :init
-  (setq sml/no-confirm-load-theme t)
-  (setq sml/theme 'respectful)
-  (sml/setup))
+;; (use-package smart-mode-line
+;;   :ensure t
+;;   :init
+;;   (setq sml/no-confirm-load-theme t)
+;;   (setq sml/theme 'respectful)
+;;   (sml/setup))
 
 ;;; multiple-cursors
 ;; Multiple cursors for emacs. 
@@ -418,12 +419,12 @@
 ;;; Themes
 
 ;; Spacemacs
-(use-package spacemacs-theme
-	:ensure t
-	:init
-	(load-theme 'spacemacs-dark t)
-	;; (load-theme 'spacemacs-light t)
-	)
+;; (use-package spacemacs-theme
+;; 	:ensure t
+;; 	:init
+;; 	(load-theme 'spacemacs-dark t)
+;; 	;; (load-theme 'spacemacs-light t)
+;; 	)
 
 ;; Solarized
 ;; (use-package solarized-theme
@@ -431,11 +432,11 @@
 ;;  :init
 ;;  (load-theme 'solarized-dark t))
 
-;; Zenburn
-;; (use-package zenburn-theme
-;;   :ensure t
-;;   :init
-;;   (load-theme 'zenburn t))
+;;Zenburn
+(use-package zenburn-theme
+  :ensure t
+  :init
+  (load-theme 'zenburn t))
 
 ;; Darktooth
 ;; (use-package darktooth-theme
