@@ -16,6 +16,7 @@
 											 helm-projectile
 											 god-mode
 											 yasnippet
+											 abbrev
 											 company
 											 flycheck
 											 ace-jump-mode
@@ -162,6 +163,12 @@
   (add-hook 'post-command-hook 'yasnippet-can-fire-p)
 
   (yas-global-mode 1))
+
+;;; abbrev
+;; Defined abbreviations get autoexpanded
+(use-package abbrev
+	:init
+	(setq-default abbrev-mode t))
 
 ;;; magit
 ;; Magit is an interface to the version control system Git,
