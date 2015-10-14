@@ -1,1 +1,1 @@
-("~/.dotfiles/" "~/Dropbox/School/Fall-15/" "~/Dropbox/School/Spring-15/" "~/git/dotfiles/" "~/Dropbox/Projects/" "~/git/reddit-daily-programmer/" "~/Dropbox/LearnC/" "~/Dropbox/PE")
+("~/.dotfiles/" "~/Dropbox/School/Fall-15/" "~/Dropbox/Projects/todo/" "~/Dropbox/School/Spring-15/" "~/git/dotfiles/" "~/Dropbox/Projects/" "~/git/reddit-daily-programmer/" "~/Dropbox/LearnC/" "~/Dropbox/PE")
