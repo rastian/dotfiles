@@ -5,3 +5,5 @@ ac-comphist.dat
 .mc-lists.el
 emacs_backtrace.txt
 projectile.cache
+session.*
+eshell/

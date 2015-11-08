@@ -3,6 +3,7 @@ alias open="xdg-open"
 alias db="dropbox"
 alias eclipse='~/.eclipse/eclipse'
 alias synaptic="sudo synaptic"
+alias wiki="python3 ~/Dropbox/Projects/wiki-cli/wiki.py"
 alias todo="python3 ~/Dropbox/Projects/todo/todo.py"
 
 # Movement
