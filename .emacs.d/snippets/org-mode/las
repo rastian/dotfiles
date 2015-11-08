@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: latex-snippet
+# key: las
+# binding: direct-keybinding
+# --
+\[ $0 \]
