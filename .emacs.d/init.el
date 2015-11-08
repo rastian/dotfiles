@@ -35,7 +35,7 @@
 											 speed-type
 											 slime
 											 cdlatex
-											 auctex
+											 tex
 											 paredit
 											 eldoc
 											 ace-window
@@ -329,10 +329,10 @@
 (use-package cdlatex
 	:ensure t)
 
-;;; auctex
+;;; tex
 ;;
-(use-package auctex
-	:ensure t)
+(use-package tex-site
+  :ensure auctex)
 
 ;;; paredit
 ;; A minor mode for performing structured editing of S-expression data.
