@@ -34,6 +34,8 @@
 											 multiple-cursors
 											 speed-type
 											 slime
+											 cdlatex
+											 auctex
 											 paredit
 											 eldoc
 											 ace-window
@@ -316,11 +318,21 @@
 ;; The Superior Lisp Interaction Mode for Emacs
 (use-package slime
   :ensure t
-  :config
+  :init
   (setq inferior-lisp-program "sbcl")
   (setq slime-auto-start 'ask)
   (slime-setup)
   (add-to-list 'slime-contribs 'slime-repl))
+
+;;; cdlatex
+;;
+(use-package cdlatex
+	:ensure t)
+
+;;; auctex
+;;
+(use-package auctex
+	:ensure t)
 
 ;;; paredit
 ;; A minor mode for performing structured editing of S-expression data.
