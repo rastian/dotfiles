@@ -329,6 +329,12 @@
 (use-package cdlatex
 	:ensure t)
 
+;;; c-mode
+;;
+(setq-default c-basic-offset 8)
+(setq-default c-default-style "linux")
+
+
 ;;; tex
 ;;
 (use-package tex-site
@@ -482,7 +488,6 @@
 ;;   (load-theme 'monokai t))
 
 ;;; Options
-;; (add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
 
 (fringe-mode '(8 . 0))
 
@@ -525,7 +530,14 @@
 
 (setq echo-keystrokes 0.1)
 
-(setq c-default-style "bsd")
-(setq c-basic-offset 4)
+
+
+;; (defun display-startup-echo-area-message ()
+;;   (message "Let the hacking begin!"))
+
+(defun unix-file ()
+	"Change the current buffer to Latin 1 with Unix line-ends."
+	(interactive)
+	(set-buffer-file-coding-system 'iso-latin-1-unix t))
 
 ;;; init.el ends here
