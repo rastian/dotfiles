@@ -324,11 +324,6 @@
   (slime-setup)
   (add-to-list 'slime-contribs 'slime-repl))
 
-;;; cdlatex
-;;
-(use-package cdlatex
-	:ensure t)
-
 ;;; c-mode
 ;;
 (setq-default c-basic-offset 4)
@@ -339,6 +334,12 @@
 ;;
 (use-package tex-site
   :ensure auctex)
+
+
+;;; cdlatex
+;;
+(use-package cdlatex
+	:ensure t)
 
 ;;; paredit
 ;; A minor mode for performing structured editing of S-expression data.
