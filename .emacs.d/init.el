@@ -331,7 +331,7 @@
 
 ;;; c-mode
 ;;
-(setq-default c-basic-offset 8)
+(setq-default c-basic-offset 4)
 (setq-default c-default-style "linux")
 
 
