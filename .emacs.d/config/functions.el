@@ -4,7 +4,7 @@
   (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
 
 
-;; (global-set-key (kbd "M-;") 'toggle-comment-on-line)
+(global-set-key (kbd "C-;") 'toggle-comment-on-line)
 
 (defun display-startup-echo-area-message ()
   "Displays message after Emacs has finished loading"

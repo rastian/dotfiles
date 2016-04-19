@@ -9,22 +9,12 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-(defvar my-packages '(
-		      use-package
-		      org
-		      helm
-		      projectile
-		      helm-projectile
-		      god-mode
-		      ))
-
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
-
-
 ;;; Package Configurations
 ;; (require 'use-package)
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+(setq use-package-verbose t)
+
 (eval-when-compile
   (require 'use-package))
 (require 'diminish)
@@ -36,28 +26,63 @@
   ;; authoring documents with a fast and effective plain-text system.
   :ensure t
   :config
+  (setq org-hide-emphasis-markers t)
+  ;; Regex to replace bullets with unicode characters
+  (font-lock-add-keywords 'org-mode
+			  '(("^ +\\([*]\\) "
+			     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+  (font-lock-add-keywords 'org-mode
+			  '(("^ +\\([-]\\) "
+			     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "►"))))))
+  (font-lock-add-keywords 'org-mode
+			  '(("^ +\\([+]\\) "
+			     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "○"))))))
+  
   (setq org-log-done t)
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((python . t)
      (java . t)))
-  (setq org-ellipsis "◦◦◦"))
+  (setq org-ellipsis "◦◦◦")
 
+  ;; testing. changing header size and font based on level
+  (let* ((variable-tuple (cond ((x-list-fonts "Source Sans Pro") '(:font "Source Sans Pro"))
+			       ((x-list-fonts "Lucida Grande")   '(:font "Lucida Grande"))
+			       ((x-list-fonts "Verdana")         '(:font "Verdana"))
+			       ((x-family-fonts "Sans Serif")    '(:family "Sans Serif"))
+			       (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
+	 (base-font-color     (face-foreground 'default nil 'default))
+	 (headline           '(:inherit default :weight bold :foreground ,base-font-color)))
+
+    (custom-theme-set-faces 'user
+			    '(org-level-8 ((t (,@headline ,@variable-tuple))))
+			    '(org-level-7 ((t (,@headline ,@variable-tuple))))
+			    '(org-level-6 ((t (,@headline ,@variable-tuple))))
+			    '(org-level-5 ((t (,@headline ,@variable-tuple))))
+			    '(org-level-4 ((t (,@headline ,@variable-tuple :height 1))))
+			    '(org-level-3 ((t (,@headline ,@variable-tuple :height 1.1))))
+			    '(org-level-2 ((t (,@headline ,@variable-tuple :height 1.25))))
+			    '(org-level-1 ((t (,@headline ,@variable-tuple :height 1.5))))
+			    '(org-document-title ((t (,@headline ,@variable-tuple :height 1.5 :underline nil)))))))
+
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 (use-package helm
   ;; An incremental completion and selection narrowing framework for Emacs.
   :ensure t
   :diminish helm-mode
   :init
-  (progn
-    (require 'helm-config)
-    (setq helm-candidate-number-limit 100)
-    (setq helm-idle-delay 0.0
-	  helm-input-idle-delay 0.01
-	  helm-quick-update t
-	  helm-M-x-requires-pattern nil
-	  helm-ff-skip-boring-files t)
-    (helm-mode))
+  (require 'helm-config)
+  (setq helm-candidate-number-limit 100)
+  (setq  helm-idle-delay 0.0)
+  (setq helm-input-idle-delay 0.01)
+  (setq helm-quick-update t)
+  (setq helm-M-x-requires-pattern nil)
+  (setq helm-ff-skip-boring-files t)
+  (helm-mode)
   :bind (("C-c h" . helm-mini)
 	 ("C-h a" . helm-apropos)
 	 ("C-x b" . helm-buffers-list)
@@ -68,6 +93,11 @@
 	 ("C-x c SPC" . helm-all-mark-rings)
 	 ("C-x C-f" . helm-find-files)))
 
+(use-package helm-descbinds
+  :ensure t
+  :defer t
+  :bind (("C-h b" . helm-descbinds)
+	 ("C-h w" . helm-descbinds)))
 
 (use-package projectile
   ;; A project interaction library for Emacs
@@ -112,6 +142,13 @@
 	 ("C-c C-<left>" . winner-undo)
 	 ("C-c C-<right>" . winner-redo)))
 
+(use-package undo-tree
+  :ensure t
+  :defer t
+  :config
+  (global-undo-tree-mode)
+  (setq undo-tree-visualizer-timestamps t)
+  (setq undo-tree-visualizer-diff t))
 
 (use-package yasnippet
   ;; A template system for Emacs
@@ -150,6 +187,12 @@
   :ensure t
   :bind (("C-x g" . magit-status)))
 
+(use-package comment-dwim-2
+  :ensure t
+  :bind (("M-;" . comment-dwim-2))
+  :config
+  (setq comment-dwim-2--inline-comment-behavior 'reindent-comment))
+
 
 (use-package company
   ;; Modular in-buffer completion framework for Emacs
@@ -157,6 +200,9 @@
   :diminish company-mode
   :config
   (global-company-mode 1))
+
+(use-package auto-complete
+  :ensure t)
 
 ;;; flycheck
 ;; Modern on the fly syntax checking for GNU Emacs
@@ -178,9 +224,20 @@
   :ensure t
   :config
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-  (setq web-mode-enable-auto-closing t)
-  (setq tab-width 2)
-  (setq web-mode-enable-auto-pairing t))
+  (add-to-list 'auto-mode-alist '("\\.php?\\'" . web-mode))
+  (defun my-web-mode-hook ()
+    (setq web-mode-enable-auto-closing t)
+    (setq web-mode-enable-auto-pairing t)
+    (setq web-mode-markup-indent-offset 2)
+    (setq web-mode-css-indent-offset 2)
+    (setq web-mode-code-indent-offset 2)
+    (setq web-mode-attr-indent-offset 2)
+    (setq web-mode-enable-current-element-highlight t))
+  (add-hook 'web-mode-hook 'my-web-mode-hook))
+;; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+;; (setq web-mode-enable-auto-closing t)
+;; (setq tab-width 2)
+;; (setq web-mode-enable-auto-pairing t))
 
 
 (use-package impatient-mode
@@ -240,18 +297,22 @@
 
 (use-package powerline
   ;; Powerline in Emacs
-  :ensure t)
+  :disabled t
+  :ensure t
+  :config
+  (powerline-default-theme)
+  (setq powerline-default-separator 'slant))
 
 (use-package spaceline-config
-  :disabled t
+  ;; :disabled t
   :load-path "elisp/spaceline/"
   :config
   (defvar spaceline-workspace-numbers-unicode)
   (defvar spaceline-window-numbers-unicode)
   (spaceline-emacs-theme)
   (setq spaceline-workspace-numbers-unicode t)
-  (setq spaceline-window-numbers-unicode t))
-
+  (setq spaceline-window-numbers-unicode t)
+  (setq spaceline--segment-line ))
 
 (use-package smart-mode-line
   ;; A powerful and beautiful mode-line for Emacs.
@@ -266,6 +327,8 @@
 ;; Multiple cursors for emacs. 
 (use-package multiple-cursors
   :ensure t
+  :config
+  (setq multiple-cursors-mode nil)
   :bind (("C->" . mc/mark-next-like-this)
 	 ("C-<" . mc/mark-previous-like-this)
 	 ("C-c C-<" . mc/mark-all-like-this)))
@@ -279,9 +342,65 @@
   (slime-setup)
   (add-to-list 'slime-contribs 'slime-repl))
 
-(use-package c-mode
+(use-package clojure-mode
+  :ensure t
   :config
-  (setq-default c-basic-offset 4)
+  (add-hook 'clojure-mode-hook 'subword-mode))
+
+(use-package clojure-mode-extra-font-locking
+  :ensure t
+  :config
+  (require 'clojure-mode-extra-font-locking))
+
+(use-package cider
+  :ensure t
+  :config
+  (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+  (setq cider-repl-pop-to-buffer-on-connect)
+  (setq cider-show-error-buffer)
+  (setq cider-auto-select-error-buffer)
+  (setq cider-repl-history-file "~/.emacs.d/cider-history")
+  (setq cider-repl-wrap-history)
+  (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
+  (add-to-list 'auto-mode-alist '("\\.boot$" . clojure-mode))
+  (add-to-list 'auto-mode-alist '("\\.cljs.*$" . clojure-mode))
+  (add-to-list 'auto-mode-alist '("lein-env" . enh-ruby-mode))
+
+  (setq cider-repl-display-help-banner nil)
+
+  (defun cider-start-http-server ()
+    (interactive)
+    (cider-load-current-buffer)
+    (let ((ns (cider-current-ns)))
+      (cider-repl-set-ns ns)
+      (cider-interactive-eval (format "(println '(def server (%s/start))) (println 'server)" ns))
+      (cider-interactive-eval (format "(def server (%s/start)) (println server)" ns))))
+
+  (defun cider-refresh ()
+    (interactive)
+    (cider-interactive-eval (format "(user/reset)")))
+
+  (defun cider-user-ns ()
+    (interactive)
+    (cider-repl-set-ns "user"))
+
+  (add-hook 'cider-mode-hook 'ac-flyspell-workaround)
+  (add-hook 'cider-mode-hook 'ac-cider-setup)
+  (add-hook 'cider-repl-mode-hook 'ac-cider-setup))
+
+(use-package ac-cider
+  :ensure t
+  :config
+  (eval-after-load "auto-complete"
+    '(progn
+       (add-to-list 'ac-modes 'cider-mode)
+       (add-to-list 'ac-modes 'cider-repl-mode))))
+
+
+(use-package cc-mode
+  :config
+  (setq tab-width 4)
+  (setq c-basic-offset 4)
   (setq-default c-default-style "linux"))
 
 (use-package tex-site
@@ -299,7 +418,11 @@
     t)
   (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
   (add-hook 'lisp-mode-hook 'enable-paredit-mode)
-  (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode))
+  (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
+  (add-hook 'clojure-mode-hook 'enable-paredit-mode)
+  (add-hook 'cider-repl-mode-hook 'paredit-mode)
+
+  (add-to-list 'exec-path "~/.lein/bin"))
 
 (use-package eldoc
   ;; A very simple but effective thing, eldoc-mode is a MinorMode which
@@ -354,6 +477,11 @@
   :diminish eyebrowse-mode
   :config
   (eyebrowse-mode t))
+
+(use-package rainbow-delimiters
+  :ensure t
+  :config
+  (rainbow-delimiters-mode t))
 
 ;;; org-present
 ;; Ultra-minimalist presentation minor-mode for Emacs org-mode

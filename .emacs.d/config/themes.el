@@ -1,8 +1,8 @@
 (use-package spacemacs-theme
-  :disabled t
+  ;; :disabled t
   :ensure t
   :config
-  ;; (load-theme 'spacemacs-light t)
+  (load-theme 'spacemacs-light t)
   (load-theme 'spacemacs-dark t))
 
 (use-package solarized-theme
@@ -18,7 +18,7 @@
   (load-theme 'zenburn t))
 
 (use-package darktooth-theme
-  ;; :disabled t
+  :disabled t
   :ensure t
   :config
   (load-theme 'darktooth t))
@@ -30,7 +30,7 @@
   (load-theme 'seti t))
 
 (use-package material-theme
-  :disabled t
+  ;; :disabled t
   :ensure t
   :config
   (load-theme 'material t))

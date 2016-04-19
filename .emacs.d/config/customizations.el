@@ -1,5 +1,9 @@
 ;; Customizations
-(set-frame-font "Monaco 12" nil t)
+
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+
+;; (set-frame-font "DejaVu Sans Mono 10" nil t)
+(set-frame-font "InputMono 10" nil t)
 
 (when window-system
   (setq frame-title-format "%b (%f)"))
@@ -44,3 +48,4 @@
 ;; Key Bindings
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
+
