@@ -4,7 +4,8 @@
 (when window-system
   (setq frame-title-format "%b (%f)"))
 
-(fringe-mode '(8 . 0))
+(when window-system
+  (fringe-mode '(8 . 0)))
 
 (set-cursor-color "white")
 (blink-cursor-mode 0)
