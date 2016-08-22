@@ -43,8 +43,7 @@
    'org-babel-load-languages
    '((python . t)
      (java . t)))
-  (setq org-ellipsis "◦◦◦")
-
+  (org-toggle-pretty-entities)
   ;; testing. changing header size and font based on level
   (let* ((variable-tuple (cond ((x-list-fonts "Source Sans Pro") '(:font "Source Sans Pro"))
 			       ((x-list-fonts "Lucida Grande")   '(:font "Lucida Grande"))

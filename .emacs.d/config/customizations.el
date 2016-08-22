@@ -2,8 +2,7 @@
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 
-;; (set-frame-font "DejaVu Sans Mono 10" nil t)
-(set-frame-font "InputMono 10" nil t)
+(set-frame-font "Monaco 11" nil t)
 
 (when window-system
   (setq frame-title-format "%b (%f)"))
@@ -20,7 +19,8 @@
 (tooltip-mode -1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(scroll-bar-mode -1)
+(when window-system
+   (scroll-bar-mode -1))
 
 (line-number-mode 1)
 (column-number-mode 1)
