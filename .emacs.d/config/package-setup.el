@@ -503,3 +503,10 @@
 	      (org-present-show-cursor)
 	      (org-present-read-write)
 	      (global-hl-line-mode 1))))
+
+;;; fixme-mode
+;; highlights keywords like TODO, FIX, FIXME, and BUG
+(use-package fixme-mode
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook 'fixme-mode))
