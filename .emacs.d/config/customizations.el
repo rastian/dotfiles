@@ -2,12 +2,10 @@
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 
-(set-frame-font "Monaco 11" nil t)
+;; (set-frame-font "Monaco 11" nil t)
 
 (when window-system
-  (setq frame-title-format "%b (%f)"))
-
-(when window-system
+  (setq frame-title-format "%b (%f)")
   (fringe-mode '(8 . 0)))
 
 (set-cursor-color "white")
