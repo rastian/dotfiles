@@ -1,2 +1,1 @@
-("~/Dropbox/School/Spring-15/" "~/Dropbox/School/Fall-15/" "~/Dropbox/School/Spring-16" "~/dotfiles/" "~/Dropbox/Projects/")
-
+("~/dotfiles/" "~/Dropbox/School/2016/fall/" "~/Dropbox/Let's Pretend/" "~/Dropbox/Projects/wiki-cli/" "~/Dropbox/Projects/")
