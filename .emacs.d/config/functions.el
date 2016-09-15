@@ -15,3 +15,12 @@
   "Change the current buffer to Latin 1 with Unix line-ends."
   (interactive)
   (set-buffer-file-coding-system 'iso-latin-1-unix t))
+
+(defun make (args)
+  "Runs the make command and then "
+  (interactive "smake: ")
+  (compile (concat "make " args)))
+
+
+
+
