@@ -1,8 +1,12 @@
-;; Customizations
+;; Customizations -- Summary
+
+;;; Commentary:
+
+;;; Code:
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 
-;; (set-frame-font "Monaco 11" nil t)
+(set-frame-font "Anonymous Pro 10" nil t)
 
 (when window-system
   (setq frame-title-format "%b (%f)")
@@ -42,9 +46,13 @@
 	    (push '("<=" . 8804) prettify-symbols-alist)
 	    (push '("lambda" . 955) prettify-symbols-alist)
 	    (push '("!=" . 8800) prettify-symbols-alist)))
+
 (global-prettify-symbols-mode t)
 
 ;; Key Bindings
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
+(provide 'customizations)
+
+;;; customizations.el ends here

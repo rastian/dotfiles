@@ -1,3 +1,9 @@
+;;; themes -- Summary
+
+;;; Commentary:
+
+;;; Code:
+
 (use-package spacemacs-theme
   :disabled t
   :ensure t
@@ -30,13 +36,17 @@
   (load-theme 'material t))
 
 (use-package monokai-theme
-  :disabled t
+  ;; :disabled t
   :ensure t
   :config
   (load-theme 'monokai t))
 
 (use-package darktooth-theme
-  ;; :disabled t
+  :disabled t
   :ensure t
   :config
   (load-theme 'darktooth t))
+
+(provide 'themes)
+
+;;; themes.el ends here

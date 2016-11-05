@@ -1,3 +1,9 @@
+;;; package-setup -- Summary
+
+;;; Commentary:
+
+;;; Code:
+
 (package-initialize)
 (require 'package)
 
@@ -510,3 +516,8 @@
   :ensure t
   :config
   (add-hook 'prog-mode-hook 'fixme-mode))
+
+(provide 'package-setup)
+
+;;; package-setup.el ends here
+
