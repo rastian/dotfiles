@@ -5,17 +5,14 @@ alias synaptic="sudo synaptic"
 alias wiki="python3 ~/Dropbox/Projects/wiki-cli/wiki.py"
 alias todo="python3 ~/Dropbox/Projects/todo/todo.py"
 alias eclipse="$HOME/.eclipse/eclipse"
+alias update='sudo apt-get update && sudo apt-get upgrade'
+
 # Movement
 alias .='cd ..'
 alias ..='cd ../..'
 alias ...='cd ../../..'
 alias ....='cd ../../../..'
 alias c='clear'
-
-# Games
-alias mcserver="cd ~/.minecraft_server && java -jar minecraft_server.1.8.1.jar world nogui"
-alias minecraft="cd ~ && java -jar .Minecraft.jar"
-alias dwarf="~/.Dwarf-Fortress/startlnp"
 
 # Emacs
 alias emacscn="emacsclient -c -n"
