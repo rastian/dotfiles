@@ -27,6 +27,13 @@
   (interactive "smake: ")
   (compile (concat "make " args)))
 
+(defun kill-line-backwards (args)
+  "Kill ARG lines backwards."
+  (interactive "p")
+  (kill-line (- 1 args)))
+(global-set-key (kbd "C-c k") 'kill-line-backwards)
+
+
 (provide 'functions)
 
 ;;; functions.el ends here
