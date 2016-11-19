@@ -306,7 +306,7 @@
   :ensure t
   :config
   (powerline-default-theme)
-  (setq powerline-default-separator 'slant))
+  (setq powerline-default-separator 'wave))
 
 (use-package spaceline-config
   ;; :disabled t
