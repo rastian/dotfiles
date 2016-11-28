@@ -28,14 +28,19 @@
   (compile (concat "make " args)))
 
 (defun kill-line-backwards (args)
-  "Kill ARG lines backwards."
+  "Kill ARGS lines backwards."
   (interactive "p")
   (kill-line (- 1 args)))
 (global-set-key (kbd "C-c k") 'kill-line-backwards)
 
+(defun eshell/clear ()
+  "Clear the eshell buffer."
+  (let ((inhibit-read-only t))
+    (erase-buffer)
+        (eshell-send-input)))
 
-(provide 'functions)
 
-;;; functions.el ends here
+(provide 'my-functions)
+;;; my-functions.el ends here
 
 
