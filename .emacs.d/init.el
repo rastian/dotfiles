@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-(add-to-list 'load-path "~/.emacs.d/config")
+(add-to-list 'load-path "~/.emacs.d/config/")
 
 (load "package-setup.el")
 (load "customizations.el")
