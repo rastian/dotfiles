@@ -192,6 +192,11 @@
   :ensure t
   :bind (("C-x g" . magit-status)))
 
+(use-package tramp
+  :ensure t
+  :config
+  (setq tramp-default-method "ssh"))
+
 (use-package comment-dwim-2
   :ensure t
   :bind (("M-;" . comment-dwim-2))

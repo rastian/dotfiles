@@ -33,6 +33,13 @@
   (kill-line (- 1 args)))
 (global-set-key (kbd "C-c k") 'kill-line-backwards)
 
+(defun fix-indent ()
+  "Fixes indents of whole buffer"
+  (interactive)
+  (delete-trailing-whitespace)
+  (indent-region (point-min) (point-max) nil)
+  (untabify (point-min) (point-max)))
+
 
 (provide 'functions)
 

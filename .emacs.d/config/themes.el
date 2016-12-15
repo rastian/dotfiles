@@ -18,7 +18,7 @@
   (load-theme 'solarized-dark t))
 
 (use-package zenburn-theme
-  :disabled t
+  ;; :disabled t
   :ensure t
   :config
   (load-theme 'zenburn t))
@@ -36,7 +36,7 @@
   (load-theme 'material t))
 
 (use-package monokai-theme
-  ;; :disabled t
+  :disabled t
   :ensure t
   :config
   (load-theme 'monokai t))
