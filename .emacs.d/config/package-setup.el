@@ -310,37 +310,17 @@
   (setq guide-key/recursive-key-sequence-flag t)
   (setq guide-key/popup-window-position 'bottom))
 
-(use-package powerline
-  ;; Powerline in Emacs
-  :disabled t
-  :ensure t
-  :config
-  (powerline-default-theme)
-  (setq powerline-default-separator 'wave))
-
-(use-package spaceline-config
-  ;; :disabled t
-  :load-path "elisp/spaceline/"
-  :config
-  (defvar spaceline-workspace-numbers-unicode)
-  (defvar spaceline-window-numbers-unicode)
-  (spaceline-emacs-theme)
-  (setq spaceline-workspace-numbers-unicode t)
-  (setq spaceline-window-numbers-unicode t)
-  (setq spaceline--segment-line ))
-
 (use-package smart-mode-line
   ;; A powerful and beautiful mode-line for Emacs.
-  :disabled t
   :ensure t
+  :ensure smart-mode-line-powerline-theme
   :config
   (setq sml/no-confirm-load-theme t)
   (setq sml/theme 'respectful)
   (sml/setup))
 
-;;; multiple-cursors
-;; Multiple cursors for emacs. 
 (use-package multiple-cursors
+  ;; Multiple cursors for emacs. 
   :ensure t
   :config
   (setq multiple-cursors-mode nil)
