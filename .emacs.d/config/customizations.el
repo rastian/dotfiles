@@ -6,7 +6,7 @@
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 
-(set-frame-font "Anonymous Pro 10" nil t)
+(set-frame-font "Anonymous Pro 12" nil t)
 
 (when window-system
   (setq frame-title-format "%b (%f)")
@@ -22,7 +22,18 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (when window-system
-   (scroll-bar-mode -1))
+  (scroll-bar-mode -1))
+
+(defvar backup-dir "~/.emacs.d/saves")
+(if (not (file-exists-p backup-dir))
+    (make-directory backup-dir t))
+
+(setq backup-by-copying t
+      delete-old-versions t
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t)
+(setq backup-directory-alist `(("." . ,backup-dir)))
 
 (line-number-mode 1)
 (column-number-mode 1)
