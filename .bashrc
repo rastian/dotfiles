@@ -3,14 +3,14 @@
 ## Environment Variables
 export PS1="\[\033[38;5;39m\]\u@\H\[$(tput sgr0)\]\[\033[38;5;84m\] \e[97min \e[32m\w\[$(tput sgr0)\]\[\033[38;5;15m\]\n\\$\[$(tput sgr0)\] "
 export TERM='xterm-256color'
-export EDITOR="emacsclient -c -n"
+export EDITOR="emacsclient -nw --alternate-editor=vim"
 
 if [ -d "$HOME/bin/" ]; then
     export PATH=$HOME/bin:$PATH
 fi
 
 if [ -d "$HOME/Dropbox/" ]; then
-    export school=~/Dropbox/School/Fall-15
+    export school=~/Dropbox/School/2017/spring/
 fi
 
 ## Functions
@@ -44,7 +44,7 @@ extract() {
 
 bak() {
     if [ "$#" -eq 0 ]; then
-	echo "At least one file must be given"
+	echo "Usage: bak <file>"
     fi
 
     for file in "$@"
@@ -52,7 +52,7 @@ bak() {
 	if [ -e "$file" ] && [ -f "$file" ]; then
 	    cp "$file" "$file.bak"
 	else
-	    echo "$file is not a valid file"
+	    echo "$file does not exist" >&2
 	fi
     done
 }
