@@ -1,1 +1,0 @@
-("~/dotfiles/" "~/Dropbox/School/2016/fall/" "~/Dropbox/Let's Pretend/" "~/Dropbox/Projects/wiki-cli/" "~/Dropbox/Projects/")
