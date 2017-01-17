@@ -44,7 +44,6 @@
 			  '(("^ +\\([+]\\) "
 			     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "○"))))))
   
-  (setq org-log-done t)
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((python . t)
