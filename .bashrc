@@ -9,8 +9,9 @@ if [ -d "$HOME/bin/" ]; then
     export PATH=$HOME/bin:$PATH
 fi
 
-if [ -d "$HOME/Dropbox/" ]; then
-    export school=~/Dropbox/School/2017/spring/
+school=~/Dropbox/School/2017/spring
+if [ -d "$school" ]; then
+    export school
 fi
 
 ## Functions
@@ -26,7 +27,7 @@ extract() {
             mkdir $NAME && cd $NAME
             case "$1" in
 		*.tar.bz2|*.tar.gz|*.tar.xz|*.tar|*.tgz|*.tbz2)   tar xvf ../$1    ;;
-		*.lzma)      unlzma ../$1     ;;
+		*.lzma)      unlzma ../$1      ;;
 		*.bz2)       bunzip2 ../$1     ;;
 		*.rar)       unrar x -ad ../$1 ;;
 		*.gz)        gunzip ../$1      ;;
@@ -35,10 +36,10 @@ extract() {
 		*.7z)        7z x ../$1        ;;
 		*.xz)        unxz ../$1        ;;
 		*.exe)       cabextract ../$1  ;;
-		*)           extract: "'$1' - unknown archive method" ;;
+		*)           extract: echo "'$1' - unknown archive method" >&2 ;;
             esac
 	else
-            echo "$1 - file does not exist"
+            echo "$1 - file does not exist" >&2
 	fi
     fi
 }
@@ -51,7 +52,7 @@ bak() {
     for file in "$@"
     do
 	if [ -e "$file" ] && [ -f "$file" ]; then
-	    cp "$file" "$file.bak"
+	    cp $file{,.bak}
 	else
 	    echo "$file does not exist" >&2
 	fi
