@@ -9,9 +9,9 @@ if [ -d "$HOME/bin/" ]; then
     export PATH=$HOME/bin:$PATH
 fi
 
-school=~/Dropbox/School/2017/spring
-if [ -d "$school" ]; then
-    export school
+SCHOOL=~/Dropbox/School/2017/spring
+if [ -d "$SCHOOL" ]; then
+    export SCHOOL
 fi
 
 ## Functions
