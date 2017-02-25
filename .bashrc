@@ -46,7 +46,7 @@ extract() {
 
 bak() {
     if [ "$#" -eq 0 ]; then
-	echo "Usage: bak <file>"
+	echo "Usage: bak <file(s)>"
     fi
 
     for file in "$@"
