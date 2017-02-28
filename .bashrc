@@ -1,7 +1,7 @@
 # .bashrc configuration
 
 ## Environment Variables
-export PS1="\[\033[38;5;39m\]\u@\H\[$(tput sgr0)\]\[\033[38;5;84m\] \e[97min \e[32m\w\[$(tput sgr0)\]\[\033[38;5;15m\]\n\\$\[$(tput sgr0)\] "
+export PS1="\[\033[38;5;39m\]\u@\H\[$(tput sgr0)\]\[\033[38;5;84m\] \e[97min \e[32m\w\[$(tput sgr0)\]\[\033[38;5;15m\]\nλ\[$(tput sgr0)\] "
 export TERM='xterm-256color'
 export EDITOR="emacsclient -nw --alternate-editor=vim"
 
@@ -58,3 +58,4 @@ bak() {
 	fi
     done
 }
+
