@@ -3,10 +3,10 @@
 ## Environment Variables
 USERCOLOR='\[\e[38;5;39m\]'	# Light Blue
 DIRCOLOR='\[\e[38;5;84m\]'	# Green
-BRANCHCOLOR='\[\e[38;5;129m\]'
+BRANCHCOLOR='\[\e[38;5;129m\]'	# Purple
 CLEARCOLOR='\[\e[0m\]'
-BRANCH="\$(if [[ -d .git ]]; then git branch | awk '/^\*/ {print $2 }' | sed 's/ //g'; fi)"
-export PS1="$USERCOLOR\u@\H ${CLEARCOLOR}in $DIRCOLOR\w $BRANCHCOLOR($BRANCH)${CLEARCOLOR}\nλ${CLEARCOLOR} "
+BRANCH="\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(*\1)/')"
+export PS1="$USERCOLOR\u@\H ${CLEARCOLOR}in $DIRCOLOR\w $BRANCHCOLOR$BRANCH${CLEARCOLOR}\nλ${CLEARCOLOR} "
 export TERM='xterm-256color'
 export EDITOR="emacsclient -nw --alternate-editor=vim"
 
