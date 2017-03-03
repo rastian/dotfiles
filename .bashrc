@@ -1,7 +1,12 @@
 # .bashrc configuration
 
 ## Environment Variables
-export PS1="\[\033[38;5;39m\]\u@\H\[$(tput sgr0)\]\[\033[38;5;84m\] \e[97min \e[32m\w\[$(tput sgr0)\]\[\033[38;5;15m\]\nλ\[$(tput sgr0)\] "
+USERCOLOR='\[\e[38;5;39m\]'	# Light Blue
+DIRCOLOR='\[\e[38;5;84m\]'	# Green
+BRANCHCOLOR='\[\e[38;5;129m\]'
+CLEARCOLOR='\[\e[0m\]'
+BRANCH="\$(if [[ -d .git ]]; then git branch | awk '/^\*/ {print $2 }' | sed 's/ //g'; fi)"
+export PS1="$USERCOLOR\u@\H ${CLEARCOLOR}in $DIRCOLOR\w $BRANCHCOLOR($BRANCH)${CLEARCOLOR}\nλ${CLEARCOLOR} "
 export TERM='xterm-256color'
 export EDITOR="emacsclient -nw --alternate-editor=vim"
 
