@@ -33,17 +33,6 @@
   :ensure t
   :config
   (setq org-hide-emphasis-markers t)
-  ;; Regex to replace bullets with unicode characters
-  (font-lock-add-keywords 'org-mode
-			  '(("^ +\\([*]\\) "
-			     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
-  (font-lock-add-keywords 'org-mode
-			  '(("^ +\\([-]\\) "
-			     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "►"))))))
-  (font-lock-add-keywords 'org-mode
-			  '(("^ +\\([+]\\) "
-			     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "○"))))))
-  
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((python . t)
@@ -57,23 +46,7 @@
 				 ((x-family-fonts "Sans Serif")    '(:family "Sans Serif"))
 				 (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
 	   (base-font-color     (face-foreground 'default nil 'default))
-	   (headline           '(:inherit default :weight bold :foreground ,base-font-color)))
-
-      (custom-theme-set-faces 'user
-			      '(org-level-8 ((t (,@headline ,@variable-tuple))))
-			      '(org-level-7 ((t (,@headline ,@variable-tuple))))
-			      '(org-level-6 ((t (,@headline ,@variable-tuple))))
-			      '(org-level-5 ((t (,@headline ,@variable-tuple))))
-			      '(org-level-4 ((t (,@headline ,@variable-tuple :height 1))))
-			      '(org-level-3 ((t (,@headline ,@variable-tuple :height 1.1))))
-			      '(org-level-2 ((t (,@headline ,@variable-tuple :height 1.25))))
-			      '(org-level-1 ((t (,@headline ,@variable-tuple :height 1.5))))
-			      '(org-document-title ((t (,@headline ,@variable-tuple :height 1.5 :underline nil))))))))
-
-(use-package org-bullets
-  :ensure t
-  :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+	   (headline           '(:inherit default :weight bold :foreground ,base-font-color))))))
 
 (use-package helm
   ;; An incremental completion and selection narrowing framework for Emacs.
