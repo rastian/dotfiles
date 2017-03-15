@@ -57,7 +57,7 @@ bak() {
     for file in "$@"
     do
 	if [ -e "$file" ] && [ -f "$file" ]; then
-	    cp $file{,.bak}
+	    cp $file $file.bak
 	else
 	    echo "$file does not exist" >&2
 	fi
