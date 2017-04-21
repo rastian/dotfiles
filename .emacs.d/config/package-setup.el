@@ -37,7 +37,7 @@
    'org-babel-load-languages
    '((python . t)
      (java . t)))
-  (org-toggle-pretty-entities))
+  (when window-system (org-toggle-pretty-entities)))
 
 (use-package org-bullets
   :ensure t

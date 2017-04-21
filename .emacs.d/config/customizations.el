@@ -51,12 +51,13 @@
 
 (setq echo-keystrokes 0.1)
 
-(add-hook 'prog-mode-hook
-	  (lambda ()
-	    (push '(">=" . 8805) prettify-symbols-alist)
-	    (push '("<=" . 8804) prettify-symbols-alist)
-	    (push '("lambda" . 955) prettify-symbols-alist)
-	    (push '("!=" . 8800) prettify-symbols-alist)))
+(when window-system
+  (add-hook 'prog-mode-hook
+	    (lambda ()
+	      (push '(">=" . 8805) prettify-symbols-alist)
+	      (push '("<=" . 8804) prettify-symbols-alist)
+	      (push '("lambda" . 955) prettify-symbols-alist)
+	      (push '("!=" . 8800) prettify-symbols-alist))))
 
 (global-prettify-symbols-mode t)
 
