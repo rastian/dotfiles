@@ -33,17 +33,6 @@
   :ensure t
   :config
   (setq org-hide-emphasis-markers t)
-  ;; Regex to replace bullets with unicode characters
-  (font-lock-add-keywords 'org-mode
-			  '(("^ +\\([*]\\) "
-			     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
-  (font-lock-add-keywords 'org-mode
-			  '(("^ +\\([-]\\) "
-			     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "►"))))))
-  (font-lock-add-keywords 'org-mode
-			  '(("^ +\\([+]\\) "
-			     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "○"))))))
-  
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((python . t)
@@ -53,7 +42,7 @@
 (use-package org-bullets
   :ensure t
   :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 (use-package helm
   ;; An incremental completion and selection narrowing framework for Emacs.
