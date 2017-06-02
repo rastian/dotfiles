@@ -469,6 +469,9 @@
 	      (org-present-read-write)
 	      (global-hl-line-mode 1))))
 
+(use-package renpy
+  :load-path "elisp/")
+
 (provide 'package-setup)
 
 ;;; package-setup.el ends here
